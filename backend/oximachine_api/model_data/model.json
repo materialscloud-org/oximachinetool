@@ -1,0 +1,1799 @@
+{
+ "model": "mof_chemarxiv",
+ "source": "https://zenodo.org/record/4361094",
+ "source_md5": {
+  "classifier": "2fee4c35f475fa2f8123e7451f6a2f74",
+  "scaler": "c5c22e22137afaa7d815b0162753b424"
+ },
+ "exported_with": {
+  "python": "3.8.20",
+  "sklearn": "0.22.2.post1",
+  "shap": "0.35.0",
+  "numpy": "1.19.5"
+ },
+ "n_features": 116,
+ "scaler": {
+  "mean": "scaler_mean",
+  "scale": "scaler_scale"
+ },
+ "classifier": {
+  "voting": "soft",
+  "weights": null,
+  "classes": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "estimators": [
+   {
+    "calibration": "isotonic",
+    "classes": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "pos_class_idx": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "uses_decision_function": true,
+    "calibrators": [
+     {
+      "X": "e0_cal0_X",
+      "y": "e0_cal0_y",
+      "X_min": -15144.159901119256,
+      "X_max": 660.7573965318625
+     },
+     {
+      "X": "e0_cal1_X",
+      "y": "e0_cal1_y",
+      "X_min": -250.2746665199534,
+      "X_max": 920.3657216432481
+     },
+     {
+      "X": "e0_cal2_X",
+      "y": "e0_cal2_y",
+      "X_min": -324.4929848095178,
+      "X_max": 244.05988326374666
+     },
+     {
+      "X": "e0_cal3_X",
+      "y": "e0_cal3_y",
+      "X_min": -9622.087202007775,
+      "X_max": 1391.3751120019801
+     },
+     {
+      "X": "e0_cal4_X",
+      "y": "e0_cal4_y",
+      "X_min": -8758.20973574379,
+      "X_max": 138.03079333036453
+     },
+     {
+      "X": "e0_cal5_X",
+      "y": "e0_cal5_y",
+      "X_min": -13254.69904500916,
+      "X_max": 671.7858005688327
+     }
+    ],
+    "base": {
+     "type": "SGDClassifier",
+     "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "coef": "e0_base_coef",
+     "intercept": "e0_base_intercept"
+    }
+   },
+   {
+    "calibration": "isotonic",
+    "classes": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "pos_class_idx": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "uses_decision_function": false,
+    "calibrators": [
+     {
+      "X": "e1_cal0_X",
+      "y": "e1_cal0_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     },
+     {
+      "X": "e1_cal1_X",
+      "y": "e1_cal1_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     },
+     {
+      "X": "e1_cal2_X",
+      "y": "e1_cal2_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     },
+     {
+      "X": "e1_cal3_X",
+      "y": "e1_cal3_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     },
+     {
+      "X": "e1_cal4_X",
+      "y": "e1_cal4_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     },
+     {
+      "X": "e1_cal5_X",
+      "y": "e1_cal5_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     }
+    ],
+    "base": {
+     "type": "KNeighborsClassifier",
+     "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "n_neighbors": 5,
+     "weights": "distance",
+     "metric": "manhattan",
+     "metric_params": {},
+     "fit_X": "e1_base_fit_X",
+     "y": "e1_base_y"
+    }
+   },
+   {
+    "calibration": "isotonic",
+    "classes": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "pos_class_idx": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "uses_decision_function": true,
+    "calibrators": [
+     {
+      "X": "e2_cal0_X",
+      "y": "e2_cal0_y",
+      "X_min": -6.93653238601938,
+      "X_max": 4.887127003333337
+     },
+     {
+      "X": "e2_cal1_X",
+      "y": "e2_cal1_y",
+      "X_min": -6.373789222206031,
+      "X_max": 16.541570325387184
+     },
+     {
+      "X": "e2_cal2_X",
+      "y": "e2_cal2_y",
+      "X_min": -11.269470479597416,
+      "X_max": 8.416072821369362
+     },
+     {
+      "X": "e2_cal3_X",
+      "y": "e2_cal3_y",
+      "X_min": -11.27440535655665,
+      "X_max": 21.100670769079187
+     },
+     {
+      "X": "e2_cal4_X",
+      "y": "e2_cal4_y",
+      "X_min": -13.710472394230589,
+      "X_max": 41.599468023990504
+     },
+     {
+      "X": "e2_cal5_X",
+      "y": "e2_cal5_y",
+      "X_min": -10.539167338224486,
+      "X_max": 9.482301830244918
+     }
+    ],
+    "base": {
+     "type": "GradientBoostingClassifier",
+     "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "learning_rate": 0.5701991664291002,
+     "init_class_prior": "e2_base_init_class_prior",
+     "trees": [
+      [
+       {
+        "children_left": "e2_base_s0_k0_children_left",
+        "children_right": "e2_base_s0_k0_children_right",
+        "feature": "e2_base_s0_k0_feature",
+        "threshold": "e2_base_s0_k0_threshold",
+        "value": "e2_base_s0_k0_value"
+       },
+       {
+        "children_left": "e2_base_s0_k1_children_left",
+        "children_right": "e2_base_s0_k1_children_right",
+        "feature": "e2_base_s0_k1_feature",
+        "threshold": "e2_base_s0_k1_threshold",
+        "value": "e2_base_s0_k1_value"
+       },
+       {
+        "children_left": "e2_base_s0_k2_children_left",
+        "children_right": "e2_base_s0_k2_children_right",
+        "feature": "e2_base_s0_k2_feature",
+        "threshold": "e2_base_s0_k2_threshold",
+        "value": "e2_base_s0_k2_value"
+       },
+       {
+        "children_left": "e2_base_s0_k3_children_left",
+        "children_right": "e2_base_s0_k3_children_right",
+        "feature": "e2_base_s0_k3_feature",
+        "threshold": "e2_base_s0_k3_threshold",
+        "value": "e2_base_s0_k3_value"
+       },
+       {
+        "children_left": "e2_base_s0_k4_children_left",
+        "children_right": "e2_base_s0_k4_children_right",
+        "feature": "e2_base_s0_k4_feature",
+        "threshold": "e2_base_s0_k4_threshold",
+        "value": "e2_base_s0_k4_value"
+       },
+       {
+        "children_left": "e2_base_s0_k5_children_left",
+        "children_right": "e2_base_s0_k5_children_right",
+        "feature": "e2_base_s0_k5_feature",
+        "threshold": "e2_base_s0_k5_threshold",
+        "value": "e2_base_s0_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s1_k0_children_left",
+        "children_right": "e2_base_s1_k0_children_right",
+        "feature": "e2_base_s1_k0_feature",
+        "threshold": "e2_base_s1_k0_threshold",
+        "value": "e2_base_s1_k0_value"
+       },
+       {
+        "children_left": "e2_base_s1_k1_children_left",
+        "children_right": "e2_base_s1_k1_children_right",
+        "feature": "e2_base_s1_k1_feature",
+        "threshold": "e2_base_s1_k1_threshold",
+        "value": "e2_base_s1_k1_value"
+       },
+       {
+        "children_left": "e2_base_s1_k2_children_left",
+        "children_right": "e2_base_s1_k2_children_right",
+        "feature": "e2_base_s1_k2_feature",
+        "threshold": "e2_base_s1_k2_threshold",
+        "value": "e2_base_s1_k2_value"
+       },
+       {
+        "children_left": "e2_base_s1_k3_children_left",
+        "children_right": "e2_base_s1_k3_children_right",
+        "feature": "e2_base_s1_k3_feature",
+        "threshold": "e2_base_s1_k3_threshold",
+        "value": "e2_base_s1_k3_value"
+       },
+       {
+        "children_left": "e2_base_s1_k4_children_left",
+        "children_right": "e2_base_s1_k4_children_right",
+        "feature": "e2_base_s1_k4_feature",
+        "threshold": "e2_base_s1_k4_threshold",
+        "value": "e2_base_s1_k4_value"
+       },
+       {
+        "children_left": "e2_base_s1_k5_children_left",
+        "children_right": "e2_base_s1_k5_children_right",
+        "feature": "e2_base_s1_k5_feature",
+        "threshold": "e2_base_s1_k5_threshold",
+        "value": "e2_base_s1_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s2_k0_children_left",
+        "children_right": "e2_base_s2_k0_children_right",
+        "feature": "e2_base_s2_k0_feature",
+        "threshold": "e2_base_s2_k0_threshold",
+        "value": "e2_base_s2_k0_value"
+       },
+       {
+        "children_left": "e2_base_s2_k1_children_left",
+        "children_right": "e2_base_s2_k1_children_right",
+        "feature": "e2_base_s2_k1_feature",
+        "threshold": "e2_base_s2_k1_threshold",
+        "value": "e2_base_s2_k1_value"
+       },
+       {
+        "children_left": "e2_base_s2_k2_children_left",
+        "children_right": "e2_base_s2_k2_children_right",
+        "feature": "e2_base_s2_k2_feature",
+        "threshold": "e2_base_s2_k2_threshold",
+        "value": "e2_base_s2_k2_value"
+       },
+       {
+        "children_left": "e2_base_s2_k3_children_left",
+        "children_right": "e2_base_s2_k3_children_right",
+        "feature": "e2_base_s2_k3_feature",
+        "threshold": "e2_base_s2_k3_threshold",
+        "value": "e2_base_s2_k3_value"
+       },
+       {
+        "children_left": "e2_base_s2_k4_children_left",
+        "children_right": "e2_base_s2_k4_children_right",
+        "feature": "e2_base_s2_k4_feature",
+        "threshold": "e2_base_s2_k4_threshold",
+        "value": "e2_base_s2_k4_value"
+       },
+       {
+        "children_left": "e2_base_s2_k5_children_left",
+        "children_right": "e2_base_s2_k5_children_right",
+        "feature": "e2_base_s2_k5_feature",
+        "threshold": "e2_base_s2_k5_threshold",
+        "value": "e2_base_s2_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s3_k0_children_left",
+        "children_right": "e2_base_s3_k0_children_right",
+        "feature": "e2_base_s3_k0_feature",
+        "threshold": "e2_base_s3_k0_threshold",
+        "value": "e2_base_s3_k0_value"
+       },
+       {
+        "children_left": "e2_base_s3_k1_children_left",
+        "children_right": "e2_base_s3_k1_children_right",
+        "feature": "e2_base_s3_k1_feature",
+        "threshold": "e2_base_s3_k1_threshold",
+        "value": "e2_base_s3_k1_value"
+       },
+       {
+        "children_left": "e2_base_s3_k2_children_left",
+        "children_right": "e2_base_s3_k2_children_right",
+        "feature": "e2_base_s3_k2_feature",
+        "threshold": "e2_base_s3_k2_threshold",
+        "value": "e2_base_s3_k2_value"
+       },
+       {
+        "children_left": "e2_base_s3_k3_children_left",
+        "children_right": "e2_base_s3_k3_children_right",
+        "feature": "e2_base_s3_k3_feature",
+        "threshold": "e2_base_s3_k3_threshold",
+        "value": "e2_base_s3_k3_value"
+       },
+       {
+        "children_left": "e2_base_s3_k4_children_left",
+        "children_right": "e2_base_s3_k4_children_right",
+        "feature": "e2_base_s3_k4_feature",
+        "threshold": "e2_base_s3_k4_threshold",
+        "value": "e2_base_s3_k4_value"
+       },
+       {
+        "children_left": "e2_base_s3_k5_children_left",
+        "children_right": "e2_base_s3_k5_children_right",
+        "feature": "e2_base_s3_k5_feature",
+        "threshold": "e2_base_s3_k5_threshold",
+        "value": "e2_base_s3_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s4_k0_children_left",
+        "children_right": "e2_base_s4_k0_children_right",
+        "feature": "e2_base_s4_k0_feature",
+        "threshold": "e2_base_s4_k0_threshold",
+        "value": "e2_base_s4_k0_value"
+       },
+       {
+        "children_left": "e2_base_s4_k1_children_left",
+        "children_right": "e2_base_s4_k1_children_right",
+        "feature": "e2_base_s4_k1_feature",
+        "threshold": "e2_base_s4_k1_threshold",
+        "value": "e2_base_s4_k1_value"
+       },
+       {
+        "children_left": "e2_base_s4_k2_children_left",
+        "children_right": "e2_base_s4_k2_children_right",
+        "feature": "e2_base_s4_k2_feature",
+        "threshold": "e2_base_s4_k2_threshold",
+        "value": "e2_base_s4_k2_value"
+       },
+       {
+        "children_left": "e2_base_s4_k3_children_left",
+        "children_right": "e2_base_s4_k3_children_right",
+        "feature": "e2_base_s4_k3_feature",
+        "threshold": "e2_base_s4_k3_threshold",
+        "value": "e2_base_s4_k3_value"
+       },
+       {
+        "children_left": "e2_base_s4_k4_children_left",
+        "children_right": "e2_base_s4_k4_children_right",
+        "feature": "e2_base_s4_k4_feature",
+        "threshold": "e2_base_s4_k4_threshold",
+        "value": "e2_base_s4_k4_value"
+       },
+       {
+        "children_left": "e2_base_s4_k5_children_left",
+        "children_right": "e2_base_s4_k5_children_right",
+        "feature": "e2_base_s4_k5_feature",
+        "threshold": "e2_base_s4_k5_threshold",
+        "value": "e2_base_s4_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s5_k0_children_left",
+        "children_right": "e2_base_s5_k0_children_right",
+        "feature": "e2_base_s5_k0_feature",
+        "threshold": "e2_base_s5_k0_threshold",
+        "value": "e2_base_s5_k0_value"
+       },
+       {
+        "children_left": "e2_base_s5_k1_children_left",
+        "children_right": "e2_base_s5_k1_children_right",
+        "feature": "e2_base_s5_k1_feature",
+        "threshold": "e2_base_s5_k1_threshold",
+        "value": "e2_base_s5_k1_value"
+       },
+       {
+        "children_left": "e2_base_s5_k2_children_left",
+        "children_right": "e2_base_s5_k2_children_right",
+        "feature": "e2_base_s5_k2_feature",
+        "threshold": "e2_base_s5_k2_threshold",
+        "value": "e2_base_s5_k2_value"
+       },
+       {
+        "children_left": "e2_base_s5_k3_children_left",
+        "children_right": "e2_base_s5_k3_children_right",
+        "feature": "e2_base_s5_k3_feature",
+        "threshold": "e2_base_s5_k3_threshold",
+        "value": "e2_base_s5_k3_value"
+       },
+       {
+        "children_left": "e2_base_s5_k4_children_left",
+        "children_right": "e2_base_s5_k4_children_right",
+        "feature": "e2_base_s5_k4_feature",
+        "threshold": "e2_base_s5_k4_threshold",
+        "value": "e2_base_s5_k4_value"
+       },
+       {
+        "children_left": "e2_base_s5_k5_children_left",
+        "children_right": "e2_base_s5_k5_children_right",
+        "feature": "e2_base_s5_k5_feature",
+        "threshold": "e2_base_s5_k5_threshold",
+        "value": "e2_base_s5_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s6_k0_children_left",
+        "children_right": "e2_base_s6_k0_children_right",
+        "feature": "e2_base_s6_k0_feature",
+        "threshold": "e2_base_s6_k0_threshold",
+        "value": "e2_base_s6_k0_value"
+       },
+       {
+        "children_left": "e2_base_s6_k1_children_left",
+        "children_right": "e2_base_s6_k1_children_right",
+        "feature": "e2_base_s6_k1_feature",
+        "threshold": "e2_base_s6_k1_threshold",
+        "value": "e2_base_s6_k1_value"
+       },
+       {
+        "children_left": "e2_base_s6_k2_children_left",
+        "children_right": "e2_base_s6_k2_children_right",
+        "feature": "e2_base_s6_k2_feature",
+        "threshold": "e2_base_s6_k2_threshold",
+        "value": "e2_base_s6_k2_value"
+       },
+       {
+        "children_left": "e2_base_s6_k3_children_left",
+        "children_right": "e2_base_s6_k3_children_right",
+        "feature": "e2_base_s6_k3_feature",
+        "threshold": "e2_base_s6_k3_threshold",
+        "value": "e2_base_s6_k3_value"
+       },
+       {
+        "children_left": "e2_base_s6_k4_children_left",
+        "children_right": "e2_base_s6_k4_children_right",
+        "feature": "e2_base_s6_k4_feature",
+        "threshold": "e2_base_s6_k4_threshold",
+        "value": "e2_base_s6_k4_value"
+       },
+       {
+        "children_left": "e2_base_s6_k5_children_left",
+        "children_right": "e2_base_s6_k5_children_right",
+        "feature": "e2_base_s6_k5_feature",
+        "threshold": "e2_base_s6_k5_threshold",
+        "value": "e2_base_s6_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s7_k0_children_left",
+        "children_right": "e2_base_s7_k0_children_right",
+        "feature": "e2_base_s7_k0_feature",
+        "threshold": "e2_base_s7_k0_threshold",
+        "value": "e2_base_s7_k0_value"
+       },
+       {
+        "children_left": "e2_base_s7_k1_children_left",
+        "children_right": "e2_base_s7_k1_children_right",
+        "feature": "e2_base_s7_k1_feature",
+        "threshold": "e2_base_s7_k1_threshold",
+        "value": "e2_base_s7_k1_value"
+       },
+       {
+        "children_left": "e2_base_s7_k2_children_left",
+        "children_right": "e2_base_s7_k2_children_right",
+        "feature": "e2_base_s7_k2_feature",
+        "threshold": "e2_base_s7_k2_threshold",
+        "value": "e2_base_s7_k2_value"
+       },
+       {
+        "children_left": "e2_base_s7_k3_children_left",
+        "children_right": "e2_base_s7_k3_children_right",
+        "feature": "e2_base_s7_k3_feature",
+        "threshold": "e2_base_s7_k3_threshold",
+        "value": "e2_base_s7_k3_value"
+       },
+       {
+        "children_left": "e2_base_s7_k4_children_left",
+        "children_right": "e2_base_s7_k4_children_right",
+        "feature": "e2_base_s7_k4_feature",
+        "threshold": "e2_base_s7_k4_threshold",
+        "value": "e2_base_s7_k4_value"
+       },
+       {
+        "children_left": "e2_base_s7_k5_children_left",
+        "children_right": "e2_base_s7_k5_children_right",
+        "feature": "e2_base_s7_k5_feature",
+        "threshold": "e2_base_s7_k5_threshold",
+        "value": "e2_base_s7_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s8_k0_children_left",
+        "children_right": "e2_base_s8_k0_children_right",
+        "feature": "e2_base_s8_k0_feature",
+        "threshold": "e2_base_s8_k0_threshold",
+        "value": "e2_base_s8_k0_value"
+       },
+       {
+        "children_left": "e2_base_s8_k1_children_left",
+        "children_right": "e2_base_s8_k1_children_right",
+        "feature": "e2_base_s8_k1_feature",
+        "threshold": "e2_base_s8_k1_threshold",
+        "value": "e2_base_s8_k1_value"
+       },
+       {
+        "children_left": "e2_base_s8_k2_children_left",
+        "children_right": "e2_base_s8_k2_children_right",
+        "feature": "e2_base_s8_k2_feature",
+        "threshold": "e2_base_s8_k2_threshold",
+        "value": "e2_base_s8_k2_value"
+       },
+       {
+        "children_left": "e2_base_s8_k3_children_left",
+        "children_right": "e2_base_s8_k3_children_right",
+        "feature": "e2_base_s8_k3_feature",
+        "threshold": "e2_base_s8_k3_threshold",
+        "value": "e2_base_s8_k3_value"
+       },
+       {
+        "children_left": "e2_base_s8_k4_children_left",
+        "children_right": "e2_base_s8_k4_children_right",
+        "feature": "e2_base_s8_k4_feature",
+        "threshold": "e2_base_s8_k4_threshold",
+        "value": "e2_base_s8_k4_value"
+       },
+       {
+        "children_left": "e2_base_s8_k5_children_left",
+        "children_right": "e2_base_s8_k5_children_right",
+        "feature": "e2_base_s8_k5_feature",
+        "threshold": "e2_base_s8_k5_threshold",
+        "value": "e2_base_s8_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s9_k0_children_left",
+        "children_right": "e2_base_s9_k0_children_right",
+        "feature": "e2_base_s9_k0_feature",
+        "threshold": "e2_base_s9_k0_threshold",
+        "value": "e2_base_s9_k0_value"
+       },
+       {
+        "children_left": "e2_base_s9_k1_children_left",
+        "children_right": "e2_base_s9_k1_children_right",
+        "feature": "e2_base_s9_k1_feature",
+        "threshold": "e2_base_s9_k1_threshold",
+        "value": "e2_base_s9_k1_value"
+       },
+       {
+        "children_left": "e2_base_s9_k2_children_left",
+        "children_right": "e2_base_s9_k2_children_right",
+        "feature": "e2_base_s9_k2_feature",
+        "threshold": "e2_base_s9_k2_threshold",
+        "value": "e2_base_s9_k2_value"
+       },
+       {
+        "children_left": "e2_base_s9_k3_children_left",
+        "children_right": "e2_base_s9_k3_children_right",
+        "feature": "e2_base_s9_k3_feature",
+        "threshold": "e2_base_s9_k3_threshold",
+        "value": "e2_base_s9_k3_value"
+       },
+       {
+        "children_left": "e2_base_s9_k4_children_left",
+        "children_right": "e2_base_s9_k4_children_right",
+        "feature": "e2_base_s9_k4_feature",
+        "threshold": "e2_base_s9_k4_threshold",
+        "value": "e2_base_s9_k4_value"
+       },
+       {
+        "children_left": "e2_base_s9_k5_children_left",
+        "children_right": "e2_base_s9_k5_children_right",
+        "feature": "e2_base_s9_k5_feature",
+        "threshold": "e2_base_s9_k5_threshold",
+        "value": "e2_base_s9_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s10_k0_children_left",
+        "children_right": "e2_base_s10_k0_children_right",
+        "feature": "e2_base_s10_k0_feature",
+        "threshold": "e2_base_s10_k0_threshold",
+        "value": "e2_base_s10_k0_value"
+       },
+       {
+        "children_left": "e2_base_s10_k1_children_left",
+        "children_right": "e2_base_s10_k1_children_right",
+        "feature": "e2_base_s10_k1_feature",
+        "threshold": "e2_base_s10_k1_threshold",
+        "value": "e2_base_s10_k1_value"
+       },
+       {
+        "children_left": "e2_base_s10_k2_children_left",
+        "children_right": "e2_base_s10_k2_children_right",
+        "feature": "e2_base_s10_k2_feature",
+        "threshold": "e2_base_s10_k2_threshold",
+        "value": "e2_base_s10_k2_value"
+       },
+       {
+        "children_left": "e2_base_s10_k3_children_left",
+        "children_right": "e2_base_s10_k3_children_right",
+        "feature": "e2_base_s10_k3_feature",
+        "threshold": "e2_base_s10_k3_threshold",
+        "value": "e2_base_s10_k3_value"
+       },
+       {
+        "children_left": "e2_base_s10_k4_children_left",
+        "children_right": "e2_base_s10_k4_children_right",
+        "feature": "e2_base_s10_k4_feature",
+        "threshold": "e2_base_s10_k4_threshold",
+        "value": "e2_base_s10_k4_value"
+       },
+       {
+        "children_left": "e2_base_s10_k5_children_left",
+        "children_right": "e2_base_s10_k5_children_right",
+        "feature": "e2_base_s10_k5_feature",
+        "threshold": "e2_base_s10_k5_threshold",
+        "value": "e2_base_s10_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s11_k0_children_left",
+        "children_right": "e2_base_s11_k0_children_right",
+        "feature": "e2_base_s11_k0_feature",
+        "threshold": "e2_base_s11_k0_threshold",
+        "value": "e2_base_s11_k0_value"
+       },
+       {
+        "children_left": "e2_base_s11_k1_children_left",
+        "children_right": "e2_base_s11_k1_children_right",
+        "feature": "e2_base_s11_k1_feature",
+        "threshold": "e2_base_s11_k1_threshold",
+        "value": "e2_base_s11_k1_value"
+       },
+       {
+        "children_left": "e2_base_s11_k2_children_left",
+        "children_right": "e2_base_s11_k2_children_right",
+        "feature": "e2_base_s11_k2_feature",
+        "threshold": "e2_base_s11_k2_threshold",
+        "value": "e2_base_s11_k2_value"
+       },
+       {
+        "children_left": "e2_base_s11_k3_children_left",
+        "children_right": "e2_base_s11_k3_children_right",
+        "feature": "e2_base_s11_k3_feature",
+        "threshold": "e2_base_s11_k3_threshold",
+        "value": "e2_base_s11_k3_value"
+       },
+       {
+        "children_left": "e2_base_s11_k4_children_left",
+        "children_right": "e2_base_s11_k4_children_right",
+        "feature": "e2_base_s11_k4_feature",
+        "threshold": "e2_base_s11_k4_threshold",
+        "value": "e2_base_s11_k4_value"
+       },
+       {
+        "children_left": "e2_base_s11_k5_children_left",
+        "children_right": "e2_base_s11_k5_children_right",
+        "feature": "e2_base_s11_k5_feature",
+        "threshold": "e2_base_s11_k5_threshold",
+        "value": "e2_base_s11_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s12_k0_children_left",
+        "children_right": "e2_base_s12_k0_children_right",
+        "feature": "e2_base_s12_k0_feature",
+        "threshold": "e2_base_s12_k0_threshold",
+        "value": "e2_base_s12_k0_value"
+       },
+       {
+        "children_left": "e2_base_s12_k1_children_left",
+        "children_right": "e2_base_s12_k1_children_right",
+        "feature": "e2_base_s12_k1_feature",
+        "threshold": "e2_base_s12_k1_threshold",
+        "value": "e2_base_s12_k1_value"
+       },
+       {
+        "children_left": "e2_base_s12_k2_children_left",
+        "children_right": "e2_base_s12_k2_children_right",
+        "feature": "e2_base_s12_k2_feature",
+        "threshold": "e2_base_s12_k2_threshold",
+        "value": "e2_base_s12_k2_value"
+       },
+       {
+        "children_left": "e2_base_s12_k3_children_left",
+        "children_right": "e2_base_s12_k3_children_right",
+        "feature": "e2_base_s12_k3_feature",
+        "threshold": "e2_base_s12_k3_threshold",
+        "value": "e2_base_s12_k3_value"
+       },
+       {
+        "children_left": "e2_base_s12_k4_children_left",
+        "children_right": "e2_base_s12_k4_children_right",
+        "feature": "e2_base_s12_k4_feature",
+        "threshold": "e2_base_s12_k4_threshold",
+        "value": "e2_base_s12_k4_value"
+       },
+       {
+        "children_left": "e2_base_s12_k5_children_left",
+        "children_right": "e2_base_s12_k5_children_right",
+        "feature": "e2_base_s12_k5_feature",
+        "threshold": "e2_base_s12_k5_threshold",
+        "value": "e2_base_s12_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s13_k0_children_left",
+        "children_right": "e2_base_s13_k0_children_right",
+        "feature": "e2_base_s13_k0_feature",
+        "threshold": "e2_base_s13_k0_threshold",
+        "value": "e2_base_s13_k0_value"
+       },
+       {
+        "children_left": "e2_base_s13_k1_children_left",
+        "children_right": "e2_base_s13_k1_children_right",
+        "feature": "e2_base_s13_k1_feature",
+        "threshold": "e2_base_s13_k1_threshold",
+        "value": "e2_base_s13_k1_value"
+       },
+       {
+        "children_left": "e2_base_s13_k2_children_left",
+        "children_right": "e2_base_s13_k2_children_right",
+        "feature": "e2_base_s13_k2_feature",
+        "threshold": "e2_base_s13_k2_threshold",
+        "value": "e2_base_s13_k2_value"
+       },
+       {
+        "children_left": "e2_base_s13_k3_children_left",
+        "children_right": "e2_base_s13_k3_children_right",
+        "feature": "e2_base_s13_k3_feature",
+        "threshold": "e2_base_s13_k3_threshold",
+        "value": "e2_base_s13_k3_value"
+       },
+       {
+        "children_left": "e2_base_s13_k4_children_left",
+        "children_right": "e2_base_s13_k4_children_right",
+        "feature": "e2_base_s13_k4_feature",
+        "threshold": "e2_base_s13_k4_threshold",
+        "value": "e2_base_s13_k4_value"
+       },
+       {
+        "children_left": "e2_base_s13_k5_children_left",
+        "children_right": "e2_base_s13_k5_children_right",
+        "feature": "e2_base_s13_k5_feature",
+        "threshold": "e2_base_s13_k5_threshold",
+        "value": "e2_base_s13_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s14_k0_children_left",
+        "children_right": "e2_base_s14_k0_children_right",
+        "feature": "e2_base_s14_k0_feature",
+        "threshold": "e2_base_s14_k0_threshold",
+        "value": "e2_base_s14_k0_value"
+       },
+       {
+        "children_left": "e2_base_s14_k1_children_left",
+        "children_right": "e2_base_s14_k1_children_right",
+        "feature": "e2_base_s14_k1_feature",
+        "threshold": "e2_base_s14_k1_threshold",
+        "value": "e2_base_s14_k1_value"
+       },
+       {
+        "children_left": "e2_base_s14_k2_children_left",
+        "children_right": "e2_base_s14_k2_children_right",
+        "feature": "e2_base_s14_k2_feature",
+        "threshold": "e2_base_s14_k2_threshold",
+        "value": "e2_base_s14_k2_value"
+       },
+       {
+        "children_left": "e2_base_s14_k3_children_left",
+        "children_right": "e2_base_s14_k3_children_right",
+        "feature": "e2_base_s14_k3_feature",
+        "threshold": "e2_base_s14_k3_threshold",
+        "value": "e2_base_s14_k3_value"
+       },
+       {
+        "children_left": "e2_base_s14_k4_children_left",
+        "children_right": "e2_base_s14_k4_children_right",
+        "feature": "e2_base_s14_k4_feature",
+        "threshold": "e2_base_s14_k4_threshold",
+        "value": "e2_base_s14_k4_value"
+       },
+       {
+        "children_left": "e2_base_s14_k5_children_left",
+        "children_right": "e2_base_s14_k5_children_right",
+        "feature": "e2_base_s14_k5_feature",
+        "threshold": "e2_base_s14_k5_threshold",
+        "value": "e2_base_s14_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s15_k0_children_left",
+        "children_right": "e2_base_s15_k0_children_right",
+        "feature": "e2_base_s15_k0_feature",
+        "threshold": "e2_base_s15_k0_threshold",
+        "value": "e2_base_s15_k0_value"
+       },
+       {
+        "children_left": "e2_base_s15_k1_children_left",
+        "children_right": "e2_base_s15_k1_children_right",
+        "feature": "e2_base_s15_k1_feature",
+        "threshold": "e2_base_s15_k1_threshold",
+        "value": "e2_base_s15_k1_value"
+       },
+       {
+        "children_left": "e2_base_s15_k2_children_left",
+        "children_right": "e2_base_s15_k2_children_right",
+        "feature": "e2_base_s15_k2_feature",
+        "threshold": "e2_base_s15_k2_threshold",
+        "value": "e2_base_s15_k2_value"
+       },
+       {
+        "children_left": "e2_base_s15_k3_children_left",
+        "children_right": "e2_base_s15_k3_children_right",
+        "feature": "e2_base_s15_k3_feature",
+        "threshold": "e2_base_s15_k3_threshold",
+        "value": "e2_base_s15_k3_value"
+       },
+       {
+        "children_left": "e2_base_s15_k4_children_left",
+        "children_right": "e2_base_s15_k4_children_right",
+        "feature": "e2_base_s15_k4_feature",
+        "threshold": "e2_base_s15_k4_threshold",
+        "value": "e2_base_s15_k4_value"
+       },
+       {
+        "children_left": "e2_base_s15_k5_children_left",
+        "children_right": "e2_base_s15_k5_children_right",
+        "feature": "e2_base_s15_k5_feature",
+        "threshold": "e2_base_s15_k5_threshold",
+        "value": "e2_base_s15_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s16_k0_children_left",
+        "children_right": "e2_base_s16_k0_children_right",
+        "feature": "e2_base_s16_k0_feature",
+        "threshold": "e2_base_s16_k0_threshold",
+        "value": "e2_base_s16_k0_value"
+       },
+       {
+        "children_left": "e2_base_s16_k1_children_left",
+        "children_right": "e2_base_s16_k1_children_right",
+        "feature": "e2_base_s16_k1_feature",
+        "threshold": "e2_base_s16_k1_threshold",
+        "value": "e2_base_s16_k1_value"
+       },
+       {
+        "children_left": "e2_base_s16_k2_children_left",
+        "children_right": "e2_base_s16_k2_children_right",
+        "feature": "e2_base_s16_k2_feature",
+        "threshold": "e2_base_s16_k2_threshold",
+        "value": "e2_base_s16_k2_value"
+       },
+       {
+        "children_left": "e2_base_s16_k3_children_left",
+        "children_right": "e2_base_s16_k3_children_right",
+        "feature": "e2_base_s16_k3_feature",
+        "threshold": "e2_base_s16_k3_threshold",
+        "value": "e2_base_s16_k3_value"
+       },
+       {
+        "children_left": "e2_base_s16_k4_children_left",
+        "children_right": "e2_base_s16_k4_children_right",
+        "feature": "e2_base_s16_k4_feature",
+        "threshold": "e2_base_s16_k4_threshold",
+        "value": "e2_base_s16_k4_value"
+       },
+       {
+        "children_left": "e2_base_s16_k5_children_left",
+        "children_right": "e2_base_s16_k5_children_right",
+        "feature": "e2_base_s16_k5_feature",
+        "threshold": "e2_base_s16_k5_threshold",
+        "value": "e2_base_s16_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s17_k0_children_left",
+        "children_right": "e2_base_s17_k0_children_right",
+        "feature": "e2_base_s17_k0_feature",
+        "threshold": "e2_base_s17_k0_threshold",
+        "value": "e2_base_s17_k0_value"
+       },
+       {
+        "children_left": "e2_base_s17_k1_children_left",
+        "children_right": "e2_base_s17_k1_children_right",
+        "feature": "e2_base_s17_k1_feature",
+        "threshold": "e2_base_s17_k1_threshold",
+        "value": "e2_base_s17_k1_value"
+       },
+       {
+        "children_left": "e2_base_s17_k2_children_left",
+        "children_right": "e2_base_s17_k2_children_right",
+        "feature": "e2_base_s17_k2_feature",
+        "threshold": "e2_base_s17_k2_threshold",
+        "value": "e2_base_s17_k2_value"
+       },
+       {
+        "children_left": "e2_base_s17_k3_children_left",
+        "children_right": "e2_base_s17_k3_children_right",
+        "feature": "e2_base_s17_k3_feature",
+        "threshold": "e2_base_s17_k3_threshold",
+        "value": "e2_base_s17_k3_value"
+       },
+       {
+        "children_left": "e2_base_s17_k4_children_left",
+        "children_right": "e2_base_s17_k4_children_right",
+        "feature": "e2_base_s17_k4_feature",
+        "threshold": "e2_base_s17_k4_threshold",
+        "value": "e2_base_s17_k4_value"
+       },
+       {
+        "children_left": "e2_base_s17_k5_children_left",
+        "children_right": "e2_base_s17_k5_children_right",
+        "feature": "e2_base_s17_k5_feature",
+        "threshold": "e2_base_s17_k5_threshold",
+        "value": "e2_base_s17_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s18_k0_children_left",
+        "children_right": "e2_base_s18_k0_children_right",
+        "feature": "e2_base_s18_k0_feature",
+        "threshold": "e2_base_s18_k0_threshold",
+        "value": "e2_base_s18_k0_value"
+       },
+       {
+        "children_left": "e2_base_s18_k1_children_left",
+        "children_right": "e2_base_s18_k1_children_right",
+        "feature": "e2_base_s18_k1_feature",
+        "threshold": "e2_base_s18_k1_threshold",
+        "value": "e2_base_s18_k1_value"
+       },
+       {
+        "children_left": "e2_base_s18_k2_children_left",
+        "children_right": "e2_base_s18_k2_children_right",
+        "feature": "e2_base_s18_k2_feature",
+        "threshold": "e2_base_s18_k2_threshold",
+        "value": "e2_base_s18_k2_value"
+       },
+       {
+        "children_left": "e2_base_s18_k3_children_left",
+        "children_right": "e2_base_s18_k3_children_right",
+        "feature": "e2_base_s18_k3_feature",
+        "threshold": "e2_base_s18_k3_threshold",
+        "value": "e2_base_s18_k3_value"
+       },
+       {
+        "children_left": "e2_base_s18_k4_children_left",
+        "children_right": "e2_base_s18_k4_children_right",
+        "feature": "e2_base_s18_k4_feature",
+        "threshold": "e2_base_s18_k4_threshold",
+        "value": "e2_base_s18_k4_value"
+       },
+       {
+        "children_left": "e2_base_s18_k5_children_left",
+        "children_right": "e2_base_s18_k5_children_right",
+        "feature": "e2_base_s18_k5_feature",
+        "threshold": "e2_base_s18_k5_threshold",
+        "value": "e2_base_s18_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s19_k0_children_left",
+        "children_right": "e2_base_s19_k0_children_right",
+        "feature": "e2_base_s19_k0_feature",
+        "threshold": "e2_base_s19_k0_threshold",
+        "value": "e2_base_s19_k0_value"
+       },
+       {
+        "children_left": "e2_base_s19_k1_children_left",
+        "children_right": "e2_base_s19_k1_children_right",
+        "feature": "e2_base_s19_k1_feature",
+        "threshold": "e2_base_s19_k1_threshold",
+        "value": "e2_base_s19_k1_value"
+       },
+       {
+        "children_left": "e2_base_s19_k2_children_left",
+        "children_right": "e2_base_s19_k2_children_right",
+        "feature": "e2_base_s19_k2_feature",
+        "threshold": "e2_base_s19_k2_threshold",
+        "value": "e2_base_s19_k2_value"
+       },
+       {
+        "children_left": "e2_base_s19_k3_children_left",
+        "children_right": "e2_base_s19_k3_children_right",
+        "feature": "e2_base_s19_k3_feature",
+        "threshold": "e2_base_s19_k3_threshold",
+        "value": "e2_base_s19_k3_value"
+       },
+       {
+        "children_left": "e2_base_s19_k4_children_left",
+        "children_right": "e2_base_s19_k4_children_right",
+        "feature": "e2_base_s19_k4_feature",
+        "threshold": "e2_base_s19_k4_threshold",
+        "value": "e2_base_s19_k4_value"
+       },
+       {
+        "children_left": "e2_base_s19_k5_children_left",
+        "children_right": "e2_base_s19_k5_children_right",
+        "feature": "e2_base_s19_k5_feature",
+        "threshold": "e2_base_s19_k5_threshold",
+        "value": "e2_base_s19_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s20_k0_children_left",
+        "children_right": "e2_base_s20_k0_children_right",
+        "feature": "e2_base_s20_k0_feature",
+        "threshold": "e2_base_s20_k0_threshold",
+        "value": "e2_base_s20_k0_value"
+       },
+       {
+        "children_left": "e2_base_s20_k1_children_left",
+        "children_right": "e2_base_s20_k1_children_right",
+        "feature": "e2_base_s20_k1_feature",
+        "threshold": "e2_base_s20_k1_threshold",
+        "value": "e2_base_s20_k1_value"
+       },
+       {
+        "children_left": "e2_base_s20_k2_children_left",
+        "children_right": "e2_base_s20_k2_children_right",
+        "feature": "e2_base_s20_k2_feature",
+        "threshold": "e2_base_s20_k2_threshold",
+        "value": "e2_base_s20_k2_value"
+       },
+       {
+        "children_left": "e2_base_s20_k3_children_left",
+        "children_right": "e2_base_s20_k3_children_right",
+        "feature": "e2_base_s20_k3_feature",
+        "threshold": "e2_base_s20_k3_threshold",
+        "value": "e2_base_s20_k3_value"
+       },
+       {
+        "children_left": "e2_base_s20_k4_children_left",
+        "children_right": "e2_base_s20_k4_children_right",
+        "feature": "e2_base_s20_k4_feature",
+        "threshold": "e2_base_s20_k4_threshold",
+        "value": "e2_base_s20_k4_value"
+       },
+       {
+        "children_left": "e2_base_s20_k5_children_left",
+        "children_right": "e2_base_s20_k5_children_right",
+        "feature": "e2_base_s20_k5_feature",
+        "threshold": "e2_base_s20_k5_threshold",
+        "value": "e2_base_s20_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s21_k0_children_left",
+        "children_right": "e2_base_s21_k0_children_right",
+        "feature": "e2_base_s21_k0_feature",
+        "threshold": "e2_base_s21_k0_threshold",
+        "value": "e2_base_s21_k0_value"
+       },
+       {
+        "children_left": "e2_base_s21_k1_children_left",
+        "children_right": "e2_base_s21_k1_children_right",
+        "feature": "e2_base_s21_k1_feature",
+        "threshold": "e2_base_s21_k1_threshold",
+        "value": "e2_base_s21_k1_value"
+       },
+       {
+        "children_left": "e2_base_s21_k2_children_left",
+        "children_right": "e2_base_s21_k2_children_right",
+        "feature": "e2_base_s21_k2_feature",
+        "threshold": "e2_base_s21_k2_threshold",
+        "value": "e2_base_s21_k2_value"
+       },
+       {
+        "children_left": "e2_base_s21_k3_children_left",
+        "children_right": "e2_base_s21_k3_children_right",
+        "feature": "e2_base_s21_k3_feature",
+        "threshold": "e2_base_s21_k3_threshold",
+        "value": "e2_base_s21_k3_value"
+       },
+       {
+        "children_left": "e2_base_s21_k4_children_left",
+        "children_right": "e2_base_s21_k4_children_right",
+        "feature": "e2_base_s21_k4_feature",
+        "threshold": "e2_base_s21_k4_threshold",
+        "value": "e2_base_s21_k4_value"
+       },
+       {
+        "children_left": "e2_base_s21_k5_children_left",
+        "children_right": "e2_base_s21_k5_children_right",
+        "feature": "e2_base_s21_k5_feature",
+        "threshold": "e2_base_s21_k5_threshold",
+        "value": "e2_base_s21_k5_value"
+       }
+      ],
+      [
+       {
+        "children_left": "e2_base_s22_k0_children_left",
+        "children_right": "e2_base_s22_k0_children_right",
+        "feature": "e2_base_s22_k0_feature",
+        "threshold": "e2_base_s22_k0_threshold",
+        "value": "e2_base_s22_k0_value"
+       },
+       {
+        "children_left": "e2_base_s22_k1_children_left",
+        "children_right": "e2_base_s22_k1_children_right",
+        "feature": "e2_base_s22_k1_feature",
+        "threshold": "e2_base_s22_k1_threshold",
+        "value": "e2_base_s22_k1_value"
+       },
+       {
+        "children_left": "e2_base_s22_k2_children_left",
+        "children_right": "e2_base_s22_k2_children_right",
+        "feature": "e2_base_s22_k2_feature",
+        "threshold": "e2_base_s22_k2_threshold",
+        "value": "e2_base_s22_k2_value"
+       },
+       {
+        "children_left": "e2_base_s22_k3_children_left",
+        "children_right": "e2_base_s22_k3_children_right",
+        "feature": "e2_base_s22_k3_feature",
+        "threshold": "e2_base_s22_k3_threshold",
+        "value": "e2_base_s22_k3_value"
+       },
+       {
+        "children_left": "e2_base_s22_k4_children_left",
+        "children_right": "e2_base_s22_k4_children_right",
+        "feature": "e2_base_s22_k4_feature",
+        "threshold": "e2_base_s22_k4_threshold",
+        "value": "e2_base_s22_k4_value"
+       },
+       {
+        "children_left": "e2_base_s22_k5_children_left",
+        "children_right": "e2_base_s22_k5_children_right",
+        "feature": "e2_base_s22_k5_feature",
+        "threshold": "e2_base_s22_k5_threshold",
+        "value": "e2_base_s22_k5_value"
+       }
+      ]
+     ]
+    }
+   },
+   {
+    "calibration": "isotonic",
+    "classes": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "pos_class_idx": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "uses_decision_function": false,
+    "calibrators": [
+     {
+      "X": "e3_cal0_X",
+      "y": "e3_cal0_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     },
+     {
+      "X": "e3_cal1_X",
+      "y": "e3_cal1_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     },
+     {
+      "X": "e3_cal2_X",
+      "y": "e3_cal2_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     },
+     {
+      "X": "e3_cal3_X",
+      "y": "e3_cal3_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     },
+     {
+      "X": "e3_cal4_X",
+      "y": "e3_cal4_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     },
+     {
+      "X": "e3_cal5_X",
+      "y": "e3_cal5_y",
+      "X_min": 0.0,
+      "X_max": 1.0
+     }
+    ],
+    "base": {
+     "type": "ExtraTreesClassifier",
+     "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "n_classes": 6,
+     "trees": [
+      {
+       "children_left": "e3_base_t0_children_left",
+       "children_right": "e3_base_t0_children_right",
+       "feature": "e3_base_t0_feature",
+       "threshold": "e3_base_t0_threshold",
+       "value": "e3_base_t0_value"
+      },
+      {
+       "children_left": "e3_base_t1_children_left",
+       "children_right": "e3_base_t1_children_right",
+       "feature": "e3_base_t1_feature",
+       "threshold": "e3_base_t1_threshold",
+       "value": "e3_base_t1_value"
+      },
+      {
+       "children_left": "e3_base_t2_children_left",
+       "children_right": "e3_base_t2_children_right",
+       "feature": "e3_base_t2_feature",
+       "threshold": "e3_base_t2_threshold",
+       "value": "e3_base_t2_value"
+      },
+      {
+       "children_left": "e3_base_t3_children_left",
+       "children_right": "e3_base_t3_children_right",
+       "feature": "e3_base_t3_feature",
+       "threshold": "e3_base_t3_threshold",
+       "value": "e3_base_t3_value"
+      },
+      {
+       "children_left": "e3_base_t4_children_left",
+       "children_right": "e3_base_t4_children_right",
+       "feature": "e3_base_t4_feature",
+       "threshold": "e3_base_t4_threshold",
+       "value": "e3_base_t4_value"
+      },
+      {
+       "children_left": "e3_base_t5_children_left",
+       "children_right": "e3_base_t5_children_right",
+       "feature": "e3_base_t5_feature",
+       "threshold": "e3_base_t5_threshold",
+       "value": "e3_base_t5_value"
+      },
+      {
+       "children_left": "e3_base_t6_children_left",
+       "children_right": "e3_base_t6_children_right",
+       "feature": "e3_base_t6_feature",
+       "threshold": "e3_base_t6_threshold",
+       "value": "e3_base_t6_value"
+      },
+      {
+       "children_left": "e3_base_t7_children_left",
+       "children_right": "e3_base_t7_children_right",
+       "feature": "e3_base_t7_feature",
+       "threshold": "e3_base_t7_threshold",
+       "value": "e3_base_t7_value"
+      },
+      {
+       "children_left": "e3_base_t8_children_left",
+       "children_right": "e3_base_t8_children_right",
+       "feature": "e3_base_t8_feature",
+       "threshold": "e3_base_t8_threshold",
+       "value": "e3_base_t8_value"
+      },
+      {
+       "children_left": "e3_base_t9_children_left",
+       "children_right": "e3_base_t9_children_right",
+       "feature": "e3_base_t9_feature",
+       "threshold": "e3_base_t9_threshold",
+       "value": "e3_base_t9_value"
+      },
+      {
+       "children_left": "e3_base_t10_children_left",
+       "children_right": "e3_base_t10_children_right",
+       "feature": "e3_base_t10_feature",
+       "threshold": "e3_base_t10_threshold",
+       "value": "e3_base_t10_value"
+      },
+      {
+       "children_left": "e3_base_t11_children_left",
+       "children_right": "e3_base_t11_children_right",
+       "feature": "e3_base_t11_feature",
+       "threshold": "e3_base_t11_threshold",
+       "value": "e3_base_t11_value"
+      },
+      {
+       "children_left": "e3_base_t12_children_left",
+       "children_right": "e3_base_t12_children_right",
+       "feature": "e3_base_t12_feature",
+       "threshold": "e3_base_t12_threshold",
+       "value": "e3_base_t12_value"
+      },
+      {
+       "children_left": "e3_base_t13_children_left",
+       "children_right": "e3_base_t13_children_right",
+       "feature": "e3_base_t13_feature",
+       "threshold": "e3_base_t13_threshold",
+       "value": "e3_base_t13_value"
+      },
+      {
+       "children_left": "e3_base_t14_children_left",
+       "children_right": "e3_base_t14_children_right",
+       "feature": "e3_base_t14_feature",
+       "threshold": "e3_base_t14_threshold",
+       "value": "e3_base_t14_value"
+      },
+      {
+       "children_left": "e3_base_t15_children_left",
+       "children_right": "e3_base_t15_children_right",
+       "feature": "e3_base_t15_feature",
+       "threshold": "e3_base_t15_threshold",
+       "value": "e3_base_t15_value"
+      },
+      {
+       "children_left": "e3_base_t16_children_left",
+       "children_right": "e3_base_t16_children_right",
+       "feature": "e3_base_t16_feature",
+       "threshold": "e3_base_t16_threshold",
+       "value": "e3_base_t16_value"
+      },
+      {
+       "children_left": "e3_base_t17_children_left",
+       "children_right": "e3_base_t17_children_right",
+       "feature": "e3_base_t17_feature",
+       "threshold": "e3_base_t17_threshold",
+       "value": "e3_base_t17_value"
+      },
+      {
+       "children_left": "e3_base_t18_children_left",
+       "children_right": "e3_base_t18_children_right",
+       "feature": "e3_base_t18_feature",
+       "threshold": "e3_base_t18_threshold",
+       "value": "e3_base_t18_value"
+      },
+      {
+       "children_left": "e3_base_t19_children_left",
+       "children_right": "e3_base_t19_children_right",
+       "feature": "e3_base_t19_feature",
+       "threshold": "e3_base_t19_threshold",
+       "value": "e3_base_t19_value"
+      },
+      {
+       "children_left": "e3_base_t20_children_left",
+       "children_right": "e3_base_t20_children_right",
+       "feature": "e3_base_t20_feature",
+       "threshold": "e3_base_t20_threshold",
+       "value": "e3_base_t20_value"
+      },
+      {
+       "children_left": "e3_base_t21_children_left",
+       "children_right": "e3_base_t21_children_right",
+       "feature": "e3_base_t21_feature",
+       "threshold": "e3_base_t21_threshold",
+       "value": "e3_base_t21_value"
+      },
+      {
+       "children_left": "e3_base_t22_children_left",
+       "children_right": "e3_base_t22_children_right",
+       "feature": "e3_base_t22_feature",
+       "threshold": "e3_base_t22_threshold",
+       "value": "e3_base_t22_value"
+      },
+      {
+       "children_left": "e3_base_t23_children_left",
+       "children_right": "e3_base_t23_children_right",
+       "feature": "e3_base_t23_feature",
+       "threshold": "e3_base_t23_threshold",
+       "value": "e3_base_t23_value"
+      },
+      {
+       "children_left": "e3_base_t24_children_left",
+       "children_right": "e3_base_t24_children_right",
+       "feature": "e3_base_t24_feature",
+       "threshold": "e3_base_t24_threshold",
+       "value": "e3_base_t24_value"
+      },
+      {
+       "children_left": "e3_base_t25_children_left",
+       "children_right": "e3_base_t25_children_right",
+       "feature": "e3_base_t25_feature",
+       "threshold": "e3_base_t25_threshold",
+       "value": "e3_base_t25_value"
+      },
+      {
+       "children_left": "e3_base_t26_children_left",
+       "children_right": "e3_base_t26_children_right",
+       "feature": "e3_base_t26_feature",
+       "threshold": "e3_base_t26_threshold",
+       "value": "e3_base_t26_value"
+      },
+      {
+       "children_left": "e3_base_t27_children_left",
+       "children_right": "e3_base_t27_children_right",
+       "feature": "e3_base_t27_feature",
+       "threshold": "e3_base_t27_threshold",
+       "value": "e3_base_t27_value"
+      },
+      {
+       "children_left": "e3_base_t28_children_left",
+       "children_right": "e3_base_t28_children_right",
+       "feature": "e3_base_t28_feature",
+       "threshold": "e3_base_t28_threshold",
+       "value": "e3_base_t28_value"
+      },
+      {
+       "children_left": "e3_base_t29_children_left",
+       "children_right": "e3_base_t29_children_right",
+       "feature": "e3_base_t29_feature",
+       "threshold": "e3_base_t29_threshold",
+       "value": "e3_base_t29_value"
+      },
+      {
+       "children_left": "e3_base_t30_children_left",
+       "children_right": "e3_base_t30_children_right",
+       "feature": "e3_base_t30_feature",
+       "threshold": "e3_base_t30_threshold",
+       "value": "e3_base_t30_value"
+      },
+      {
+       "children_left": "e3_base_t31_children_left",
+       "children_right": "e3_base_t31_children_right",
+       "feature": "e3_base_t31_feature",
+       "threshold": "e3_base_t31_threshold",
+       "value": "e3_base_t31_value"
+      },
+      {
+       "children_left": "e3_base_t32_children_left",
+       "children_right": "e3_base_t32_children_right",
+       "feature": "e3_base_t32_feature",
+       "threshold": "e3_base_t32_threshold",
+       "value": "e3_base_t32_value"
+      },
+      {
+       "children_left": "e3_base_t33_children_left",
+       "children_right": "e3_base_t33_children_right",
+       "feature": "e3_base_t33_feature",
+       "threshold": "e3_base_t33_threshold",
+       "value": "e3_base_t33_value"
+      },
+      {
+       "children_left": "e3_base_t34_children_left",
+       "children_right": "e3_base_t34_children_right",
+       "feature": "e3_base_t34_feature",
+       "threshold": "e3_base_t34_threshold",
+       "value": "e3_base_t34_value"
+      },
+      {
+       "children_left": "e3_base_t35_children_left",
+       "children_right": "e3_base_t35_children_right",
+       "feature": "e3_base_t35_feature",
+       "threshold": "e3_base_t35_threshold",
+       "value": "e3_base_t35_value"
+      },
+      {
+       "children_left": "e3_base_t36_children_left",
+       "children_right": "e3_base_t36_children_right",
+       "feature": "e3_base_t36_feature",
+       "threshold": "e3_base_t36_threshold",
+       "value": "e3_base_t36_value"
+      },
+      {
+       "children_left": "e3_base_t37_children_left",
+       "children_right": "e3_base_t37_children_right",
+       "feature": "e3_base_t37_feature",
+       "threshold": "e3_base_t37_threshold",
+       "value": "e3_base_t37_value"
+      },
+      {
+       "children_left": "e3_base_t38_children_left",
+       "children_right": "e3_base_t38_children_right",
+       "feature": "e3_base_t38_feature",
+       "threshold": "e3_base_t38_threshold",
+       "value": "e3_base_t38_value"
+      },
+      {
+       "children_left": "e3_base_t39_children_left",
+       "children_right": "e3_base_t39_children_right",
+       "feature": "e3_base_t39_feature",
+       "threshold": "e3_base_t39_threshold",
+       "value": "e3_base_t39_value"
+      },
+      {
+       "children_left": "e3_base_t40_children_left",
+       "children_right": "e3_base_t40_children_right",
+       "feature": "e3_base_t40_feature",
+       "threshold": "e3_base_t40_threshold",
+       "value": "e3_base_t40_value"
+      },
+      {
+       "children_left": "e3_base_t41_children_left",
+       "children_right": "e3_base_t41_children_right",
+       "feature": "e3_base_t41_feature",
+       "threshold": "e3_base_t41_threshold",
+       "value": "e3_base_t41_value"
+      },
+      {
+       "children_left": "e3_base_t42_children_left",
+       "children_right": "e3_base_t42_children_right",
+       "feature": "e3_base_t42_feature",
+       "threshold": "e3_base_t42_threshold",
+       "value": "e3_base_t42_value"
+      },
+      {
+       "children_left": "e3_base_t43_children_left",
+       "children_right": "e3_base_t43_children_right",
+       "feature": "e3_base_t43_feature",
+       "threshold": "e3_base_t43_threshold",
+       "value": "e3_base_t43_value"
+      },
+      {
+       "children_left": "e3_base_t44_children_left",
+       "children_right": "e3_base_t44_children_right",
+       "feature": "e3_base_t44_feature",
+       "threshold": "e3_base_t44_threshold",
+       "value": "e3_base_t44_value"
+      },
+      {
+       "children_left": "e3_base_t45_children_left",
+       "children_right": "e3_base_t45_children_right",
+       "feature": "e3_base_t45_feature",
+       "threshold": "e3_base_t45_threshold",
+       "value": "e3_base_t45_value"
+      },
+      {
+       "children_left": "e3_base_t46_children_left",
+       "children_right": "e3_base_t46_children_right",
+       "feature": "e3_base_t46_feature",
+       "threshold": "e3_base_t46_threshold",
+       "value": "e3_base_t46_value"
+      },
+      {
+       "children_left": "e3_base_t47_children_left",
+       "children_right": "e3_base_t47_children_right",
+       "feature": "e3_base_t47_feature",
+       "threshold": "e3_base_t47_threshold",
+       "value": "e3_base_t47_value"
+      },
+      {
+       "children_left": "e3_base_t48_children_left",
+       "children_right": "e3_base_t48_children_right",
+       "feature": "e3_base_t48_feature",
+       "threshold": "e3_base_t48_threshold",
+       "value": "e3_base_t48_value"
+      },
+      {
+       "children_left": "e3_base_t49_children_left",
+       "children_right": "e3_base_t49_children_right",
+       "feature": "e3_base_t49_feature",
+       "threshold": "e3_base_t49_threshold",
+       "value": "e3_base_t49_value"
+      },
+      {
+       "children_left": "e3_base_t50_children_left",
+       "children_right": "e3_base_t50_children_right",
+       "feature": "e3_base_t50_feature",
+       "threshold": "e3_base_t50_threshold",
+       "value": "e3_base_t50_value"
+      },
+      {
+       "children_left": "e3_base_t51_children_left",
+       "children_right": "e3_base_t51_children_right",
+       "feature": "e3_base_t51_feature",
+       "threshold": "e3_base_t51_threshold",
+       "value": "e3_base_t51_value"
+      },
+      {
+       "children_left": "e3_base_t52_children_left",
+       "children_right": "e3_base_t52_children_right",
+       "feature": "e3_base_t52_feature",
+       "threshold": "e3_base_t52_threshold",
+       "value": "e3_base_t52_value"
+      },
+      {
+       "children_left": "e3_base_t53_children_left",
+       "children_right": "e3_base_t53_children_right",
+       "feature": "e3_base_t53_feature",
+       "threshold": "e3_base_t53_threshold",
+       "value": "e3_base_t53_value"
+      },
+      {
+       "children_left": "e3_base_t54_children_left",
+       "children_right": "e3_base_t54_children_right",
+       "feature": "e3_base_t54_feature",
+       "threshold": "e3_base_t54_threshold",
+       "value": "e3_base_t54_value"
+      },
+      {
+       "children_left": "e3_base_t55_children_left",
+       "children_right": "e3_base_t55_children_right",
+       "feature": "e3_base_t55_feature",
+       "threshold": "e3_base_t55_threshold",
+       "value": "e3_base_t55_value"
+      },
+      {
+       "children_left": "e3_base_t56_children_left",
+       "children_right": "e3_base_t56_children_right",
+       "feature": "e3_base_t56_feature",
+       "threshold": "e3_base_t56_threshold",
+       "value": "e3_base_t56_value"
+      },
+      {
+       "children_left": "e3_base_t57_children_left",
+       "children_right": "e3_base_t57_children_right",
+       "feature": "e3_base_t57_feature",
+       "threshold": "e3_base_t57_threshold",
+       "value": "e3_base_t57_value"
+      },
+      {
+       "children_left": "e3_base_t58_children_left",
+       "children_right": "e3_base_t58_children_right",
+       "feature": "e3_base_t58_feature",
+       "threshold": "e3_base_t58_threshold",
+       "value": "e3_base_t58_value"
+      },
+      {
+       "children_left": "e3_base_t59_children_left",
+       "children_right": "e3_base_t59_children_right",
+       "feature": "e3_base_t59_feature",
+       "threshold": "e3_base_t59_threshold",
+       "value": "e3_base_t59_value"
+      },
+      {
+       "children_left": "e3_base_t60_children_left",
+       "children_right": "e3_base_t60_children_right",
+       "feature": "e3_base_t60_feature",
+       "threshold": "e3_base_t60_threshold",
+       "value": "e3_base_t60_value"
+      },
+      {
+       "children_left": "e3_base_t61_children_left",
+       "children_right": "e3_base_t61_children_right",
+       "feature": "e3_base_t61_feature",
+       "threshold": "e3_base_t61_threshold",
+       "value": "e3_base_t61_value"
+      },
+      {
+       "children_left": "e3_base_t62_children_left",
+       "children_right": "e3_base_t62_children_right",
+       "feature": "e3_base_t62_feature",
+       "threshold": "e3_base_t62_threshold",
+       "value": "e3_base_t62_value"
+      },
+      {
+       "children_left": "e3_base_t63_children_left",
+       "children_right": "e3_base_t63_children_right",
+       "feature": "e3_base_t63_feature",
+       "threshold": "e3_base_t63_threshold",
+       "value": "e3_base_t63_value"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "neighbors": {
+  "metric": "euclidean",
+  "data": "kd_data",
+  "names_file": "training_names.json"
+ }
+}

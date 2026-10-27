@@ -1,80 +1,57 @@
 # oxiMACHINE app
 
-[![Actions Status](https://github.com/kjappelbaum/oximachinetool/workflows/Docker%20Image%20Build%20CI/badge.svg)](https://github.com/kjappelbaum/oximachinetool/actions)
-[![](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/download/releases/3.6.0/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3603606.svg)](https://doi.org/10.5281/zenodo.3603606)
 
-<img src='oximachine_logo.png' width=200px, text-align=center> </img>
+<img src="frontend/public/oximachine_logo.png" width="200px">
 
-Flask app that uses `jsmol` to visualize the structure (and predictions of the oximachine). The code builds heavily on top of the implementation of the [seekpath web app](https://github.com/giovannipizzi/seekpath). Internally, it uses the [oximachinerunner](https://github.com/kjappelbaum/oximachinerunner) Python package.
+Web app that predicts the oxidation states of metal sites in metal-organic
+frameworks, with confidence, nearest training structures, feature values and
+feature importance for each site.
 
-## How to run the code
+- `frontend/`: React (Vite + Tailwind) single-page app. Structures are parsed
+  in the browser with [matsci-parse](https://www.npmjs.com/package/matsci-parse)
+  and shown with the Materials Cloud React components.
+- `backend/`: FastAPI service with a single compute endpoint,
+  `POST /api/compute`. It also serves the built frontend. See
+  [backend/README.md](backend/README.md) for the API, the model, and how it
+  was checked against the legacy implementation.
 
-You have several options to run the application:
+## Running it
 
-- You can directly [use it on a Dokku pod of Materials Cloud](https://go.epfl.ch/oximachine).
-- You can pull a pre-built image from the [GitHub container registry](https://github.com/users/kjappelbaum/packages/container/package/oximachinetool)
-
-```bash
-docker pull docker pull ghcr.io/kjappelbaum/oximachinetool:latest
-docker run -d -p 8091:80 ghcr.io/kjappelbaum/oximachinetool
-```
-
-You can now open the application at `localhost:8091` in your browser.
-
-- You can build your own image by cloning this repository and following the instructions under the heading "build and run docker image". You'll need to use this option if you want to customize parts of the app.
-
-For the last two options, you need to have [Docker installed](https://docs.docker.com/engine/install/) on your machine.
-
-### Build and run docker image
-
-After `git clone https://github.com/kjappelbaum/oximachinetool.git` run
+With Docker (from the repository root):
 
 ```bash
-cd dev_scripts
-./build-docker.sh # to build the oximachine
-./run_docker.sh # to run the docker image
+docker build -f backend/Dockerfile -t oximachine .
+docker run -p 8000:8000 oximachine   # http://localhost:8000
 ```
 
-The `get-apache-errorlog.sh` script can be used to debug potential issues. The `enter-docker.sh` script opens the bash in the container and can also be useful to debug issues. In case the forwarding of the logs to the container does not work, you'll find logs in `/var/log/apache2/error.log`.
+For development, run the two separately:
 
-## How to use the app
-
-The use of the web app is shown in the screencast.
-
-![oximachine screencast](_static/oximachine.gif)
-
-The app provides the option to upload a `cif` or to also choose from some examples.
-
-## Using the API endpoint
-
-Currently, we implemented one simple REST-API point to run the oximachine. You can use it with a `POST` request to `\api\v1\oximachine`. From Python, you could for example use the following snippet
-
-```python
-import requests
-
-# read the filecontent of the CIF
-with open('myciffile.cif', 'r') as handle:
-    file_content = handle.read()
-
-# make a POST request to the API
-requests.post('<base_url>/api/v1/oximachine', data = {'cifFile': file_content})
+```bash
+cd backend && uv sync && uv run uvicorn oximachine_api.main:app --reload   # :8000
+cd frontend && pnpm install && pnpm dev   # :5173, proxies /api to :8000
 ```
 
-Replace base URL with the one of the deployment you want to use. If you want to use our deployment, use `http://oximachine.materialscloud.io`, i.e., `requests.post('http://oximachine.materialscloud.io/api/v1/oximachine', data = {'cifFile': file_content})`. If you want to use it on your own machine, you might want to use something like `localhost:8091`.
+`pnpm dev:mock` runs the frontend against placeholder data, without a backend.
 
-# Development
+Tests: `cd backend && uv run pytest`.
 
-- We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/)
-- In this way, we can automatically create a `CHANGELOG.md` file. For example, using the [gitchangelog](https://github.com/vaab/gitchangelog)
+## History
+
+Until version 1.x this was a Flask app on the Materials Cloud
+`tools-barebone` image (Python 3.6, Apache), with structures parsed by `c2x`
+and the model run through
+[oximachinerunner](https://github.com/kjappelbaum/oximachinerunner). That
+implementation is in the git history (last commit `0c46b5f`). The model is
+unchanged: its parameters were exported from the original scikit-learn pickles
+and the new backend reproduces the legacy predictions (see
+`backend/README.md`).
 
 # Acknowledgments
 
-- Materials Cloud team, especially [Leopold Talirz](https://github.com/ltalirz) for help with deployment and giving valuable feedback and providing a good template.
-- For parsing of the CIF we use [`c2x`](https://www.c2x.org.uk/) (GPLv3): Rutter, M. J. C2x: A Tool for Visualisation and Input Preparation for Castep and Other Electronic Structure Codes. Computer Physics Communications 2018, 225, 174–179.
+- Materials Cloud team, especially [Leopold Talirz](https://github.com/ltalirz) for help with deployment, valuable feedback and a good template.
 - Internally, we use [pymatgen](https://pymatgen.org/): Ong, S. P.; Richards, W. D.; Jain, A.; Hautier, G.; Kocher, M.; Cholia, S.; Gunter, D.; Chevrier, V. L.; Persson, K. A.; Ceder, G. Python Materials Genomics (Pymatgen): A Robust, Open-Source Python Library for Materials Analysis. Computational Materials Science 2013, 68, 314–319.
-- and [ase](https://wiki.fysik.dtu.dk/ase/) (LGPL): Larsen, A. H.; Mortensen, J. J.; Blomqvist, J.; Castelli, I. E.; Christensen, R.; Du\lak, M.; Friis, J.; Groves, M. N.; Hammer, B.; Hargus, C.; Hermes, E. D.; Jennings, P. C.; Jensen, P. B.; Kermode, J.; Kitchin, J. R.; Kolsbjerg, E. L.; Kubal, J.; Kaasbjerg, K.; Lysgaard, S.; Maronsson, J. B.; Maxson, T.; Olsen, T.; Pastewka, L.; Peterson, A.; Rostgaard, C.; Schiøtz, J.; Schütt, O.; Strange, M.; Thygesen, K. S.; Vegge, T.; Vilhelmsen, L.; Walter, M.; Zeng, Z.; Jacobsen, K. W. The Atomic Simulation Environment—a Python Library for Working with Atoms. J. Phys.: Condens. Matter 2017, 29 (27), 273002.
-- The framework is built using [flask](https://flask.palletsprojects.com/en/1.1.x/)
-- For visualization, we use [jsmol](https://jsmol.com/)
-- Feature importance is calculated using a [SHAP TreeExplainer](https://github.com/slundberg/shap): Lundberg, S. M.; Erion, G.; Chen, H.; DeGrave, A.; Prutkin, J. M.; Nair, B.; Katz, R.; Himmelfarb, J.; Bansal, N.; Lee, S.-I. From Local Explanations to Global Understanding with Explainable AI for Trees. Nature Machine Intelligence 2020, 2 (1), 2522–5839.
-- Models are trained using [sklearn](https://scikit-learn.org/): Scikit-learn: Machine Learning in Python, Pedregosa et al., JMLR 12, pp. 2825-2830, 2011.
+- Metal sites are featurized with [matminer](https://hackingmaterials.lbl.gov/matminer/) via [oximachine_featurizer](https://github.com/kjappelbaum/oximachine_featurizer).
+- Feature importance is calculated using a [SHAP TreeExplainer](https://github.com/shap/shap): Lundberg, S. M.; Erion, G.; Chen, H.; DeGrave, A.; Prutkin, J. M.; Nair, B.; Katz, R.; Himmelfarb, J.; Bansal, N.; Lee, S.-I. From Local Explanations to Global Understanding with Explainable AI for Trees. Nature Machine Intelligence 2020, 2 (1), 2522–5839.
+- Models were trained using [scikit-learn](https://scikit-learn.org/): Scikit-learn: Machine Learning in Python, Pedregosa et al., JMLR 12, pp. 2825-2830, 2011.
+- The original app built heavily on the [seekpath web app](https://github.com/giovannipizzi/seekpath) and used [`c2x`](https://www.c2x.org.uk/) (Rutter, M. J. Computer Physics Communications 2018, 225, 174–179), [ase](https://wiki.fysik.dtu.dk/ase/), [flask](https://flask.palletsprojects.com/) and [jsmol](https://jsmol.com/).

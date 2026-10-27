@@ -1,0 +1,587 @@
+{
+ "trees": [
+  {
+   "children_left": "shap_t0_children_left",
+   "children_right": "shap_t0_children_right",
+   "children_default": "shap_t0_children_default",
+   "features": "shap_t0_features",
+   "thresholds": "shap_t0_thresholds",
+   "values": "shap_t0_values",
+   "node_sample_weight": "shap_t0_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t1_children_left",
+   "children_right": "shap_t1_children_right",
+   "children_default": "shap_t1_children_default",
+   "features": "shap_t1_features",
+   "thresholds": "shap_t1_thresholds",
+   "values": "shap_t1_values",
+   "node_sample_weight": "shap_t1_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t2_children_left",
+   "children_right": "shap_t2_children_right",
+   "children_default": "shap_t2_children_default",
+   "features": "shap_t2_features",
+   "thresholds": "shap_t2_thresholds",
+   "values": "shap_t2_values",
+   "node_sample_weight": "shap_t2_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t3_children_left",
+   "children_right": "shap_t3_children_right",
+   "children_default": "shap_t3_children_default",
+   "features": "shap_t3_features",
+   "thresholds": "shap_t3_thresholds",
+   "values": "shap_t3_values",
+   "node_sample_weight": "shap_t3_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t4_children_left",
+   "children_right": "shap_t4_children_right",
+   "children_default": "shap_t4_children_default",
+   "features": "shap_t4_features",
+   "thresholds": "shap_t4_thresholds",
+   "values": "shap_t4_values",
+   "node_sample_weight": "shap_t4_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t5_children_left",
+   "children_right": "shap_t5_children_right",
+   "children_default": "shap_t5_children_default",
+   "features": "shap_t5_features",
+   "thresholds": "shap_t5_thresholds",
+   "values": "shap_t5_values",
+   "node_sample_weight": "shap_t5_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t6_children_left",
+   "children_right": "shap_t6_children_right",
+   "children_default": "shap_t6_children_default",
+   "features": "shap_t6_features",
+   "thresholds": "shap_t6_thresholds",
+   "values": "shap_t6_values",
+   "node_sample_weight": "shap_t6_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t7_children_left",
+   "children_right": "shap_t7_children_right",
+   "children_default": "shap_t7_children_default",
+   "features": "shap_t7_features",
+   "thresholds": "shap_t7_thresholds",
+   "values": "shap_t7_values",
+   "node_sample_weight": "shap_t7_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t8_children_left",
+   "children_right": "shap_t8_children_right",
+   "children_default": "shap_t8_children_default",
+   "features": "shap_t8_features",
+   "thresholds": "shap_t8_thresholds",
+   "values": "shap_t8_values",
+   "node_sample_weight": "shap_t8_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t9_children_left",
+   "children_right": "shap_t9_children_right",
+   "children_default": "shap_t9_children_default",
+   "features": "shap_t9_features",
+   "thresholds": "shap_t9_thresholds",
+   "values": "shap_t9_values",
+   "node_sample_weight": "shap_t9_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t10_children_left",
+   "children_right": "shap_t10_children_right",
+   "children_default": "shap_t10_children_default",
+   "features": "shap_t10_features",
+   "thresholds": "shap_t10_thresholds",
+   "values": "shap_t10_values",
+   "node_sample_weight": "shap_t10_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t11_children_left",
+   "children_right": "shap_t11_children_right",
+   "children_default": "shap_t11_children_default",
+   "features": "shap_t11_features",
+   "thresholds": "shap_t11_thresholds",
+   "values": "shap_t11_values",
+   "node_sample_weight": "shap_t11_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t12_children_left",
+   "children_right": "shap_t12_children_right",
+   "children_default": "shap_t12_children_default",
+   "features": "shap_t12_features",
+   "thresholds": "shap_t12_thresholds",
+   "values": "shap_t12_values",
+   "node_sample_weight": "shap_t12_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t13_children_left",
+   "children_right": "shap_t13_children_right",
+   "children_default": "shap_t13_children_default",
+   "features": "shap_t13_features",
+   "thresholds": "shap_t13_thresholds",
+   "values": "shap_t13_values",
+   "node_sample_weight": "shap_t13_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t14_children_left",
+   "children_right": "shap_t14_children_right",
+   "children_default": "shap_t14_children_default",
+   "features": "shap_t14_features",
+   "thresholds": "shap_t14_thresholds",
+   "values": "shap_t14_values",
+   "node_sample_weight": "shap_t14_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t15_children_left",
+   "children_right": "shap_t15_children_right",
+   "children_default": "shap_t15_children_default",
+   "features": "shap_t15_features",
+   "thresholds": "shap_t15_thresholds",
+   "values": "shap_t15_values",
+   "node_sample_weight": "shap_t15_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t16_children_left",
+   "children_right": "shap_t16_children_right",
+   "children_default": "shap_t16_children_default",
+   "features": "shap_t16_features",
+   "thresholds": "shap_t16_thresholds",
+   "values": "shap_t16_values",
+   "node_sample_weight": "shap_t16_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t17_children_left",
+   "children_right": "shap_t17_children_right",
+   "children_default": "shap_t17_children_default",
+   "features": "shap_t17_features",
+   "thresholds": "shap_t17_thresholds",
+   "values": "shap_t17_values",
+   "node_sample_weight": "shap_t17_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t18_children_left",
+   "children_right": "shap_t18_children_right",
+   "children_default": "shap_t18_children_default",
+   "features": "shap_t18_features",
+   "thresholds": "shap_t18_thresholds",
+   "values": "shap_t18_values",
+   "node_sample_weight": "shap_t18_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t19_children_left",
+   "children_right": "shap_t19_children_right",
+   "children_default": "shap_t19_children_default",
+   "features": "shap_t19_features",
+   "thresholds": "shap_t19_thresholds",
+   "values": "shap_t19_values",
+   "node_sample_weight": "shap_t19_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t20_children_left",
+   "children_right": "shap_t20_children_right",
+   "children_default": "shap_t20_children_default",
+   "features": "shap_t20_features",
+   "thresholds": "shap_t20_thresholds",
+   "values": "shap_t20_values",
+   "node_sample_weight": "shap_t20_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t21_children_left",
+   "children_right": "shap_t21_children_right",
+   "children_default": "shap_t21_children_default",
+   "features": "shap_t21_features",
+   "thresholds": "shap_t21_thresholds",
+   "values": "shap_t21_values",
+   "node_sample_weight": "shap_t21_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t22_children_left",
+   "children_right": "shap_t22_children_right",
+   "children_default": "shap_t22_children_default",
+   "features": "shap_t22_features",
+   "thresholds": "shap_t22_thresholds",
+   "values": "shap_t22_values",
+   "node_sample_weight": "shap_t22_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t23_children_left",
+   "children_right": "shap_t23_children_right",
+   "children_default": "shap_t23_children_default",
+   "features": "shap_t23_features",
+   "thresholds": "shap_t23_thresholds",
+   "values": "shap_t23_values",
+   "node_sample_weight": "shap_t23_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t24_children_left",
+   "children_right": "shap_t24_children_right",
+   "children_default": "shap_t24_children_default",
+   "features": "shap_t24_features",
+   "thresholds": "shap_t24_thresholds",
+   "values": "shap_t24_values",
+   "node_sample_weight": "shap_t24_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t25_children_left",
+   "children_right": "shap_t25_children_right",
+   "children_default": "shap_t25_children_default",
+   "features": "shap_t25_features",
+   "thresholds": "shap_t25_thresholds",
+   "values": "shap_t25_values",
+   "node_sample_weight": "shap_t25_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t26_children_left",
+   "children_right": "shap_t26_children_right",
+   "children_default": "shap_t26_children_default",
+   "features": "shap_t26_features",
+   "thresholds": "shap_t26_thresholds",
+   "values": "shap_t26_values",
+   "node_sample_weight": "shap_t26_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t27_children_left",
+   "children_right": "shap_t27_children_right",
+   "children_default": "shap_t27_children_default",
+   "features": "shap_t27_features",
+   "thresholds": "shap_t27_thresholds",
+   "values": "shap_t27_values",
+   "node_sample_weight": "shap_t27_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t28_children_left",
+   "children_right": "shap_t28_children_right",
+   "children_default": "shap_t28_children_default",
+   "features": "shap_t28_features",
+   "thresholds": "shap_t28_thresholds",
+   "values": "shap_t28_values",
+   "node_sample_weight": "shap_t28_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t29_children_left",
+   "children_right": "shap_t29_children_right",
+   "children_default": "shap_t29_children_default",
+   "features": "shap_t29_features",
+   "thresholds": "shap_t29_thresholds",
+   "values": "shap_t29_values",
+   "node_sample_weight": "shap_t29_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t30_children_left",
+   "children_right": "shap_t30_children_right",
+   "children_default": "shap_t30_children_default",
+   "features": "shap_t30_features",
+   "thresholds": "shap_t30_thresholds",
+   "values": "shap_t30_values",
+   "node_sample_weight": "shap_t30_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t31_children_left",
+   "children_right": "shap_t31_children_right",
+   "children_default": "shap_t31_children_default",
+   "features": "shap_t31_features",
+   "thresholds": "shap_t31_thresholds",
+   "values": "shap_t31_values",
+   "node_sample_weight": "shap_t31_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t32_children_left",
+   "children_right": "shap_t32_children_right",
+   "children_default": "shap_t32_children_default",
+   "features": "shap_t32_features",
+   "thresholds": "shap_t32_thresholds",
+   "values": "shap_t32_values",
+   "node_sample_weight": "shap_t32_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t33_children_left",
+   "children_right": "shap_t33_children_right",
+   "children_default": "shap_t33_children_default",
+   "features": "shap_t33_features",
+   "thresholds": "shap_t33_thresholds",
+   "values": "shap_t33_values",
+   "node_sample_weight": "shap_t33_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t34_children_left",
+   "children_right": "shap_t34_children_right",
+   "children_default": "shap_t34_children_default",
+   "features": "shap_t34_features",
+   "thresholds": "shap_t34_thresholds",
+   "values": "shap_t34_values",
+   "node_sample_weight": "shap_t34_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t35_children_left",
+   "children_right": "shap_t35_children_right",
+   "children_default": "shap_t35_children_default",
+   "features": "shap_t35_features",
+   "thresholds": "shap_t35_thresholds",
+   "values": "shap_t35_values",
+   "node_sample_weight": "shap_t35_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t36_children_left",
+   "children_right": "shap_t36_children_right",
+   "children_default": "shap_t36_children_default",
+   "features": "shap_t36_features",
+   "thresholds": "shap_t36_thresholds",
+   "values": "shap_t36_values",
+   "node_sample_weight": "shap_t36_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t37_children_left",
+   "children_right": "shap_t37_children_right",
+   "children_default": "shap_t37_children_default",
+   "features": "shap_t37_features",
+   "thresholds": "shap_t37_thresholds",
+   "values": "shap_t37_values",
+   "node_sample_weight": "shap_t37_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t38_children_left",
+   "children_right": "shap_t38_children_right",
+   "children_default": "shap_t38_children_default",
+   "features": "shap_t38_features",
+   "thresholds": "shap_t38_thresholds",
+   "values": "shap_t38_values",
+   "node_sample_weight": "shap_t38_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t39_children_left",
+   "children_right": "shap_t39_children_right",
+   "children_default": "shap_t39_children_default",
+   "features": "shap_t39_features",
+   "thresholds": "shap_t39_thresholds",
+   "values": "shap_t39_values",
+   "node_sample_weight": "shap_t39_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t40_children_left",
+   "children_right": "shap_t40_children_right",
+   "children_default": "shap_t40_children_default",
+   "features": "shap_t40_features",
+   "thresholds": "shap_t40_thresholds",
+   "values": "shap_t40_values",
+   "node_sample_weight": "shap_t40_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t41_children_left",
+   "children_right": "shap_t41_children_right",
+   "children_default": "shap_t41_children_default",
+   "features": "shap_t41_features",
+   "thresholds": "shap_t41_thresholds",
+   "values": "shap_t41_values",
+   "node_sample_weight": "shap_t41_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t42_children_left",
+   "children_right": "shap_t42_children_right",
+   "children_default": "shap_t42_children_default",
+   "features": "shap_t42_features",
+   "thresholds": "shap_t42_thresholds",
+   "values": "shap_t42_values",
+   "node_sample_weight": "shap_t42_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t43_children_left",
+   "children_right": "shap_t43_children_right",
+   "children_default": "shap_t43_children_default",
+   "features": "shap_t43_features",
+   "thresholds": "shap_t43_thresholds",
+   "values": "shap_t43_values",
+   "node_sample_weight": "shap_t43_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t44_children_left",
+   "children_right": "shap_t44_children_right",
+   "children_default": "shap_t44_children_default",
+   "features": "shap_t44_features",
+   "thresholds": "shap_t44_thresholds",
+   "values": "shap_t44_values",
+   "node_sample_weight": "shap_t44_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t45_children_left",
+   "children_right": "shap_t45_children_right",
+   "children_default": "shap_t45_children_default",
+   "features": "shap_t45_features",
+   "thresholds": "shap_t45_thresholds",
+   "values": "shap_t45_values",
+   "node_sample_weight": "shap_t45_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t46_children_left",
+   "children_right": "shap_t46_children_right",
+   "children_default": "shap_t46_children_default",
+   "features": "shap_t46_features",
+   "thresholds": "shap_t46_thresholds",
+   "values": "shap_t46_values",
+   "node_sample_weight": "shap_t46_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t47_children_left",
+   "children_right": "shap_t47_children_right",
+   "children_default": "shap_t47_children_default",
+   "features": "shap_t47_features",
+   "thresholds": "shap_t47_thresholds",
+   "values": "shap_t47_values",
+   "node_sample_weight": "shap_t47_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t48_children_left",
+   "children_right": "shap_t48_children_right",
+   "children_default": "shap_t48_children_default",
+   "features": "shap_t48_features",
+   "thresholds": "shap_t48_thresholds",
+   "values": "shap_t48_values",
+   "node_sample_weight": "shap_t48_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t49_children_left",
+   "children_right": "shap_t49_children_right",
+   "children_default": "shap_t49_children_default",
+   "features": "shap_t49_features",
+   "thresholds": "shap_t49_thresholds",
+   "values": "shap_t49_values",
+   "node_sample_weight": "shap_t49_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t50_children_left",
+   "children_right": "shap_t50_children_right",
+   "children_default": "shap_t50_children_default",
+   "features": "shap_t50_features",
+   "thresholds": "shap_t50_thresholds",
+   "values": "shap_t50_values",
+   "node_sample_weight": "shap_t50_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t51_children_left",
+   "children_right": "shap_t51_children_right",
+   "children_default": "shap_t51_children_default",
+   "features": "shap_t51_features",
+   "thresholds": "shap_t51_thresholds",
+   "values": "shap_t51_values",
+   "node_sample_weight": "shap_t51_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t52_children_left",
+   "children_right": "shap_t52_children_right",
+   "children_default": "shap_t52_children_default",
+   "features": "shap_t52_features",
+   "thresholds": "shap_t52_thresholds",
+   "values": "shap_t52_values",
+   "node_sample_weight": "shap_t52_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t53_children_left",
+   "children_right": "shap_t53_children_right",
+   "children_default": "shap_t53_children_default",
+   "features": "shap_t53_features",
+   "thresholds": "shap_t53_thresholds",
+   "values": "shap_t53_values",
+   "node_sample_weight": "shap_t53_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t54_children_left",
+   "children_right": "shap_t54_children_right",
+   "children_default": "shap_t54_children_default",
+   "features": "shap_t54_features",
+   "thresholds": "shap_t54_thresholds",
+   "values": "shap_t54_values",
+   "node_sample_weight": "shap_t54_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t55_children_left",
+   "children_right": "shap_t55_children_right",
+   "children_default": "shap_t55_children_default",
+   "features": "shap_t55_features",
+   "thresholds": "shap_t55_thresholds",
+   "values": "shap_t55_values",
+   "node_sample_weight": "shap_t55_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t56_children_left",
+   "children_right": "shap_t56_children_right",
+   "children_default": "shap_t56_children_default",
+   "features": "shap_t56_features",
+   "thresholds": "shap_t56_thresholds",
+   "values": "shap_t56_values",
+   "node_sample_weight": "shap_t56_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t57_children_left",
+   "children_right": "shap_t57_children_right",
+   "children_default": "shap_t57_children_default",
+   "features": "shap_t57_features",
+   "thresholds": "shap_t57_thresholds",
+   "values": "shap_t57_values",
+   "node_sample_weight": "shap_t57_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t58_children_left",
+   "children_right": "shap_t58_children_right",
+   "children_default": "shap_t58_children_default",
+   "features": "shap_t58_features",
+   "thresholds": "shap_t58_thresholds",
+   "values": "shap_t58_values",
+   "node_sample_weight": "shap_t58_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t59_children_left",
+   "children_right": "shap_t59_children_right",
+   "children_default": "shap_t59_children_default",
+   "features": "shap_t59_features",
+   "thresholds": "shap_t59_thresholds",
+   "values": "shap_t59_values",
+   "node_sample_weight": "shap_t59_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t60_children_left",
+   "children_right": "shap_t60_children_right",
+   "children_default": "shap_t60_children_default",
+   "features": "shap_t60_features",
+   "thresholds": "shap_t60_thresholds",
+   "values": "shap_t60_values",
+   "node_sample_weight": "shap_t60_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t61_children_left",
+   "children_right": "shap_t61_children_right",
+   "children_default": "shap_t61_children_default",
+   "features": "shap_t61_features",
+   "thresholds": "shap_t61_thresholds",
+   "values": "shap_t61_values",
+   "node_sample_weight": "shap_t61_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t62_children_left",
+   "children_right": "shap_t62_children_right",
+   "children_default": "shap_t62_children_default",
+   "features": "shap_t62_features",
+   "thresholds": "shap_t62_thresholds",
+   "values": "shap_t62_values",
+   "node_sample_weight": "shap_t62_node_sample_weight"
+  },
+  {
+   "children_left": "shap_t63_children_left",
+   "children_right": "shap_t63_children_right",
+   "children_default": "shap_t63_children_default",
+   "features": "shap_t63_features",
+   "thresholds": "shap_t63_thresholds",
+   "values": "shap_t63_values",
+   "node_sample_weight": "shap_t63_node_sample_weight"
+  }
+ ],
+ "base_offset": "shap_base_offset",
+ "tree_output": "probability",
+ "objective": "binary_crossentropy",
+ "model_output": "raw",
+ "feature_perturbation": "tree_path_dependent",
+ "data": null,
+ "expected_value": "shap_expected_value"
+}
