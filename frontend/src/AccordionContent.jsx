@@ -2,12 +2,13 @@
 // (ported from the legacy Flask app, git 0c46b5f:
 // webservice/templates/visualizer_select_base.html).
 
-import { DoiBadge } from "mc-react-library";
+import { useState } from "react";
+import { DoiBadge, McInfoAccordion } from "mc-react-library";
 
 import { PREPRINT_URL } from "./utils";
 
 /** "What oxiMACHINE does" accordion. */
-export function WhatOximachineDoesContent() {
+function WhatOximachineDoesContent() {
   return (
     <div className="space-y-3">
       <p>
@@ -58,7 +59,7 @@ export function WhatOximachineDoesContent() {
 }
 
 /** "Acknowledgements" accordion. */
-export function AcknowledgementsContent() {
+function AcknowledgementsContent() {
   return (
     <div className="space-y-3">
       <p>
@@ -138,7 +139,7 @@ export function AcknowledgementsContent() {
 }
 
 /** "How to cite" accordion. */
-export function HowToCiteContent() {
+function HowToCiteContent() {
   return (
     <div>
       If you use this tool, please cite the{" "}
@@ -158,7 +159,7 @@ export function HowToCiteContent() {
 }
 
 /** Terms of use (ported verbatim from the legacy webservice/view/termsofuse.html). */
-export function TermsOfUseContent() {
+function TermsOfUseContent() {
   return (
     <div className="space-y-2">
       <p>
@@ -208,4 +209,26 @@ export function TermsOfUseContent() {
       <p>If you have any questions about these Terms, please contact us.</p>
     </div>
   );
+}
+
+const ACCORDIONS = [
+  { title: "What oxiMACHINE does", content: <WhatOximachineDoesContent /> },
+  { title: "Acknowledgements", content: <AcknowledgementsContent /> },
+  { title: "How to cite", content: <HowToCiteContent /> },
+  { title: "Terms of use", content: <TermsOfUseContent /> },
+];
+
+/** The information accordions at the top of the page, one open at a time. */
+export default function InfoAccordions() {
+  const [open, setOpen] = useState(null);
+  return ACCORDIONS.map(({ title, content }, i) => (
+    <McInfoAccordion
+      key={title}
+      title={title}
+      open={open === i}
+      onToggle={() => setOpen(open === i ? null : i)}
+    >
+      {content}
+    </McInfoAccordion>
+  ));
 }
