@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "matsci-parse": "0.18.9",
+    "matsci-parse": "0.18.11",
     "mc-react-header": "0.7.2",
     "mc-react-library": "^0.7.8",
     "mc-react-structure-visualizer": "^0.11.1",

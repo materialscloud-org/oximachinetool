@@ -5,8 +5,28 @@ from functools import cache
 from pathlib import Path
 
 import numpy as np
-from oximachine_featurizer.featurize import featurize, get_feature_names
+from oximachine_featurizer.featurize import GetFeatures, featurize, get_feature_names
 from pymatgen.core import Structure
+
+from . import voronoi
+
+# Same Voronoi polyhedra as the featurizer's cutoff, computed from a smaller
+# neighborhood (see voronoi.py).
+voronoi.install()
+
+# GetFeatures.featurizer builds new (stateless) site featurizers for every
+# metal site, reloading the Magpie element tables from disk each time: build
+# them once per structure instead.
+_build_featurizer = GetFeatures.featurizer.fget
+
+
+def _featurizer_once(self):
+    if "_site_featurizer" not in self.__dict__:
+        self.__dict__["_site_featurizer"] = _build_featurizer(self)
+    return self.__dict__["_site_featurizer"]
+
+
+GetFeatures.featurizer = property(_featurizer_once)
 
 # Feature set of the "mof_chemarxiv" model (oximachinerunner config).
 FEATURESET = [
