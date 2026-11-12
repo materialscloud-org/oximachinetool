@@ -48,6 +48,5 @@ export function csdUrl(refcode) {
 export const PREPRINT_URL =
   "https://chemrxiv.org/articles/Using_Collective_Knowledge_to_Assign_Oxidation_States/11604129/1";
 
-// The original tool refused anything larger (checked on the primitive cell,
-// which the backend still enforces).
+// The original tool refused anything larger (checked on the primitive cell).
 export const MAX_NUMBER_OF_ATOMS = 500;

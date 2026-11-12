@@ -1,12 +1,10 @@
 [project]
 name = "oximachine-api"
 version = "2.0.0.dev0"
-description = "oxiMACHINE backend: predict oxidation states of metal sites in MOFs"
+description = "oxiMACHINE: the Python reference model and the build of the browser model"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-  "fastapi>=0.115",
-  "uvicorn[standard]>=0.30",
   "numpy>=2.0",
   "scipy>=1.13",
   "scikit-learn>=1.5",
@@ -18,7 +16,6 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pytest>=8",
-    "httpx>=0.27",
 ]
 
 [build-system]

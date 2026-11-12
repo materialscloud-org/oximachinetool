@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       matsci-parse:
-        specifier: 0.18.11
-        version: 0.18.11
+        specifier: 0.18.17
+        version: 0.18.17
       mc-react-header:
         specifier: 0.7.2
         version: 0.7.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       mc-react-library:
-        specifier: ^0.7.8
-        version: 0.7.8(matsci-parse@0.18.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.7.11
+        version: 0.7.12(matsci-parse@0.18.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       mc-react-structure-visualizer:
         specifier: ^0.11.1
         version: 0.11.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -889,8 +889,8 @@ packages:
     engines: {node: '>= 18'}
     hasBin: true
 
-  matsci-parse@0.18.11:
-    resolution: {integrity: sha512-d7YLQU9bK6bl6Q/SDD/Rz3x+GisHzma5HCINyILpnTFjSfMojfWhJ5PdECqmTWLAWt9k8T1bFwVEjjB418Tvng==}
+  matsci-parse@0.18.17:
+    resolution: {integrity: sha512-8AVq1bzvpIjKbJ8Hwh7I+5wibZArKVug8jmxDl3bHx3xHP0629pK+Z8ayvi+ilx27XGX0XhetZQOfzpxXhy5xA==}
 
   matsci-parse@0.8.4:
     resolution: {integrity: sha512-mQ2KF8XEfHPJWfJoF2I3O7QRUHZs/Q4Gzz9D5tahqeXVCauiiSh1VgCMi6SzXI1dyS7k2nyb0v2/0v7VPZZhWw==}
@@ -904,8 +904,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  mc-react-library@0.7.8:
-    resolution: {integrity: sha512-BEzPHIr1MtkasyhYVTaKYpPaYfsJV0awJYvGJI711QRektxTEDXA9mSKOvQRtKZxe0WAPrf0sfgKwmMVUvbIMg==}
+  mc-react-library@0.7.12:
+    resolution: {integrity: sha512-t6Jsm/CowO9v6IwIudhLIQAA16tdNqg0WTRftdCCcDx9hjWGjNqxncMNN+UQYs2CdZA+Pq6dbntpJBmK6Y4E7A==}
     peerDependencies:
       matsci-parse: '>=0.18.9'
       react: ^18.2.0
@@ -1697,7 +1697,7 @@ snapshots:
       tiny-emitter: 2.1.0
       typed-function: 4.2.2
 
-  matsci-parse@0.18.11:
+  matsci-parse@0.18.17:
     dependencies:
       '@spglib/moyo-wasm': 0.21.0
       txml: 6.0.3
@@ -1714,9 +1714,9 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  mc-react-library@0.7.8(matsci-parse@0.18.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  mc-react-library@0.7.12(matsci-parse@0.18.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      matsci-parse: 0.18.11
+      matsci-parse: 0.18.17
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 

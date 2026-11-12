@@ -9,10 +9,6 @@ export default defineConfig({
     // Required to run wasm modules in dev mode for vite.
     exclude: ["@spglib/moyo-wasm"],
   },
-  server: {
-    // In dev, forward API calls to the FastAPI backend (uvicorn default port).
-    proxy: {
-      "/api": "http://localhost:8000",
-    },
-  },
+  // The compute worker imports matsci-parse, which loads moyo-wasm dynamically
+  worker: { format: "es" },
 });

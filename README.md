@@ -8,33 +8,58 @@ Web app that predicts the oxidation states of metal sites in metal-organic
 frameworks, with confidence, nearest training structures, feature values and
 feature importance for each site.
 
-- `frontend/`: React (Vite + Tailwind) single-page app. Structures are parsed
-  in the browser with [matsci-parse](https://www.npmjs.com/package/matsci-parse)
-  and shown with the Materials Cloud React components.
-- `backend/`: FastAPI service with a single compute endpoint,
-  `POST /api/compute`. It also serves the built frontend. See
-  [backend/README.md](backend/README.md) for the API, the model, and how it
-  was checked against the legacy implementation.
+Everything runs in the browser: structures are parsed with
+[matsci-parse](https://www.npmjs.com/package/matsci-parse), and the
+featurization, the model and the feature importance (SHAP) are JavaScript
+ports of the Python implementation, checked against it (where they can
+differ: [MIGRATION_NOTES.md](MIGRATION_NOTES.md)).
+
+- `frontend/`: React (Vite + Tailwind) single-page app. `App.jsx` is the page,
+  `src/FileUpload/` the structure upload; the tool is in `src/OxiMachine/`:
+  `compute.js` (the pipeline, run in a Web Worker by `worker.js`),
+  `model.js` (ensemble, nearest training structures, SHAP,
+  percentiles) and `features/` (the 116 features of a metal site).
+- `frontend/public/model/`: the model for the browser (in git), built by
+  `backend/scripts/build_web_model.py`.
+- `backend/`: the Python reference: the model exported from the original
+  pickles (`oximachine_api/model_data/`), its reimplementation, and the
+  scripts that build the browser model and the reference outputs the
+  frontend tests compare against. See [backend/README.md](backend/README.md).
 
 ## Running it
 
-With Docker (from the repository root):
-
 ```bash
-docker build -f backend/Dockerfile -t oximachine .
-docker run -p 8000:8000 oximachine   # http://localhost:8000
+cd frontend && pnpm install && pnpm dev   # http://localhost:5173
+pnpm test    # the JS ports against the Python reference (~2 min)
+pnpm build   # static site in dist/
 ```
 
-For development, run the two separately:
+## The model data
+
+The browser model is rebuilt from the export in
+`backend/oximachine_api/model_data/` (only needed if that changes):
 
 ```bash
-cd backend && uv sync && uv run uvicorn oximachine_api.main:app --reload   # :8000
-cd frontend && pnpm install && pnpm dev   # :5173, proxies /api to :8000
+cd backend && uv sync
+uv run python scripts/build_web_model.py       # -> frontend/public/model/
+uv run python scripts/build_web_reference.py   # -> frontend/tests/reference.json.gz
 ```
 
-`pnpm dev:mock` runs the frontend against placeholder data, without a backend.
+The app downloads about 4.8 MB up front (`manifest.json` and
+`model.bin.gz`), and then, per structure, the training points its
+nearest-neighbour searches need (`rows/*.bin.gz`, 94 files of 512 points;
+typically 1.3 MB for a MOF, cached by the browser). Every result is exactly
+the Python model's (`pnpm test`):
 
-Tests: `cd backend && uv run pytest`.
+- The kNN estimator and the nearest training structures search the
+  training points exactly, in order of a lower bound of their distance from
+  a coarse copy of every point (each feature as one of 64 bins), fetching
+  exact values only for the points the bounds cannot exclude.
+- Percentiles use only the training values where they change (60 kB instead
+  of the 39 MB training set).
+- The SHAP explainer reuses the extra trees.
+
+The docstring of `build_web_model.py` has the details.
 
 ## History
 

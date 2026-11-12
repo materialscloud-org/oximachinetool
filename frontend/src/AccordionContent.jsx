@@ -21,16 +21,16 @@ function WhatOximachineDoesContent() {
           primitive structure in the visualizer;
         </li>
         <li>
-          calculations in this web app are limited to structures with fewer
-          than 500 atoms (in the primitive cell), without disorder;
+          calculations in this web app are limited to structures with fewer than
+          500 atoms (in the primitive cell), without disorder;
         </li>
         <li>
           we attempt to detect atomic overlaps and return an error if we find
           any;
         </li>
         <li>
-          the model was trained on the oxidation states of MOFs deposited in
-          the MOF subset of the Cambridge Structural Database.
+          the model was trained on the oxidation states of MOFs deposited in the
+          MOF subset of the Cambridge Structural Database.
         </li>
       </ul>
       <p>In addition to the oxidation state predictions, we also output:</p>
@@ -83,8 +83,7 @@ function AcknowledgementsContent() {
         .
       </p>
       <p>
-        We use the following libraries, please also consider acknowledging
-        them:
+        We use the following libraries, please also consider acknowledging them:
       </p>
       <ul className="list-disc pl-10">
         <li>
@@ -100,8 +99,7 @@ function AcknowledgementsContent() {
           <a href="https://shap.readthedocs.io/">shap</a>
         </li>
         <li>
-          <a href="https://www.npmjs.com/package/matsci-parse">matsci-parse</a>{" "}
-          and <a href="https://fastapi.tiangolo.com/">FastAPI</a>
+          <a href="https://www.npmjs.com/package/matsci-parse">matsci-parse</a>
         </li>
       </ul>
       <p>
@@ -112,8 +110,8 @@ function AcknowledgementsContent() {
       <ol className="list-decimal pl-10 space-y-1">
         <li>
           Moghadam, P. Z.; Li, A.; Wiggin, S. B.; Tao, A.; Maloney, A. G. P.;
-          Wood, P. A.; Ward, S. C.; Fairen-Jimenez, D.{" "}
-          <i>Chem. Mater.</i> <b>2017</b>, 29 (7), 2618–2625.{" "}
+          Wood, P. A.; Ward, S. C.; Fairen-Jimenez, D. <i>Chem. Mater.</i>{" "}
+          <b>2017</b>, 29 (7), 2618–2625.{" "}
           <span className="inline-block align-middle">
             <DoiBadge
               doi="10.1021/acs.chemmater.7b00441"
@@ -158,64 +156,10 @@ function HowToCiteContent() {
   );
 }
 
-/** Terms of use (ported verbatim from the legacy webservice/view/termsofuse.html). */
-function TermsOfUseContent() {
-  return (
-    <div className="space-y-2">
-      <p>
-        Please read these Terms of Service ("Terms", "Terms of Service")
-        carefully before using the oxiMACHINE website (the "Service"). Your
-        access to and use of the Service is conditioned on your acceptance of
-        and compliance with these Terms. These Terms apply to all visitors,
-        users and others who access or use the Service. By accessing or using
-        the Service you agree to be bound by these Terms. If you disagree with
-        any part of the terms then you may not access the Service.
-      </p>
-      <h3 className="font-semibold">Use of uploaded data</h3>
-      <p>
-        By using the Service, you agree that any data or files you decide to
-        upload to the service may be stored anonymously for debugging purposes,
-        statistical purposes and to improve the quality of the Service.
-      </p>
-      <h3 className="font-semibold">Termination</h3>
-      <p>
-        We may terminate or suspend access to our Service immediately, without
-        prior notice or liability, for any reason whatsoever.
-      </p>
-      <h3 className="font-semibold">Links To Other Web Sites</h3>
-      <p>
-        Our Service may contain links to third-party web sites or services that
-        are not owned or controlled by us. We have no control over, and assumes
-        no responsibility for, the content, privacy policies, or practices of
-        any third party web sites or services. You further acknowledge and
-        agree that we shall not be responsible or liable, directly or
-        indirectly, for any damage or loss caused or alleged to be caused by or
-        in connection with use of or reliance on any such content, goods or
-        services available on or through any such web sites or services.
-      </p>
-      <p>
-        We strongly advise you to read the terms and conditions and privacy
-        policies of any third-party web sites or services that you visit.
-      </p>
-      <h3 className="font-semibold">Changes</h3>
-      <p>
-        We reserve the right, at our sole discretion, to modify or replace
-        these Terms at any time. By continuing to access or use our Service
-        after those revisions become effective, you agree to be bound by the
-        revised terms. If you do not agree to the new terms, please stop using
-        the Service.
-      </p>
-      <h3 className="font-semibold">Contact Us</h3>
-      <p>If you have any questions about these Terms, please contact us.</p>
-    </div>
-  );
-}
-
 const ACCORDIONS = [
   { title: "What oxiMACHINE does", content: <WhatOximachineDoesContent /> },
   { title: "Acknowledgements", content: <AcknowledgementsContent /> },
   { title: "How to cite", content: <HowToCiteContent /> },
-  { title: "Terms of use", content: <TermsOfUseContent /> },
 ];
 
 /** The information accordions at the top of the page, one open at a time. */

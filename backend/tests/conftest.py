@@ -7,7 +7,6 @@ ROOT = Path(__file__).parents[1]
 GOLDEN = ROOT / "tests" / "golden"
 PRECOMPUTED = GOLDEN / "precomputed"
 STRUCTURES = GOLDEN / "structures"  # inputs of the legacy precomputed results
-EXAMPLES = ROOT.parent / "frontend" / "public" / "examples"
 MODEL_DATA = ROOT / "oximachine_api" / "model_data"
 TRAINING_FEATURES = MODEL_DATA / "training_features.npy"
 REFERENCE = GOLDEN / "model_reference.npz"
