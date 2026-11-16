@@ -8,8 +8,7 @@ import { featurizeStructure } from "./features/featurize.js";
 
 const MIN_DISTANCE = 0.5; // Å; closer atoms are treated as overlapping
 // pymatgen's get_primitive_structure tolerance is 0.25 Å; at 0.1 moyo finds
-// the same primitive cells for the 68 ordered legacy structures. Its cell is
-// symmetry-refined (pymatgen's is not): same predictions on the legacy MOFs.
+// the same primitive cells for the 68 ordered legacy structures.
 const SYMPREC = 0.1;
 
 // Site labels of the legacy service (sic: no "k", "C" or "W"), kept so labels
@@ -24,7 +23,7 @@ async function loadPrimitive(structure) {
   if (isDisordered(structure)) {
     throw new Error("oxiMACHINE only supports ordered structures (no partial occupancies).");
   }
-  // canonical (wrapped, sites sorted): features, site indices, view and downloads share one order
+  // Symmetry-refined, unlike pymatgen's get_primitive_structure (see MIGRATION_NOTES.md)
   const primitive = canonicalize((await getSymmetry(structure, SYMPREC)).primitive);
   const n = primitive.sites.length;
   if (n > MAX_NUMBER_OF_ATOMS) {

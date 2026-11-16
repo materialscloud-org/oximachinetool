@@ -18,31 +18,46 @@ The featurizer reproduces the legacy feature matrices of those 72 structures
 
 ## Where the browser differs
 
-Measured on 1000 random MC3D structures (`test-suite`, step `oximachine`),
-app vs Python on the same parsed input:
+Measured on all 33,142 MC3D structures (`test-suite`, step `oximachine` on
+`samples/sample.txt`), app vs Python on the same parsed input, each app site
+paired with the Python site of the same element with the closest features:
 
 | | agree |
 |---|---:|
-| accepted / rejected | 1000 |
-| primitive cell size | 997 |
-| metal sites, labels, oxidation states | 996 |
-| probabilities (1e-9) and base-model votes | 988 |
-| all 116 features (1e-6) | 978 |
+| accepted / rejected | 33,137 |
+| primitive cell size | 33,095 (99.87%) |
+| oxidation states of the metal sites | 32,942 (99.41%) |
+| probabilities (1e-9) and base-model votes | 27,834 (84.00%) |
+| all 116 features (1e-6) | 22,777 (68.74%) |
 
-The remaining differences come from three places, none of which can be
-reproduced exactly:
+349 of 252,969 metal sites (0.14%) get another oxidation state. The 5
+structures accepted by one side only are rejected by Python ("featurization
+failed: need at least one array to concatenate") and predicted by the app.
 
-1. **Primitive cell.** Python uses pymatgen's
-   `get_primitive_structure(tolerance=0.25)`; the app finds the primitive
-   cell with moyo (symprec 0.1, via matsci-parse's `getSymmetry`), whose
-   atoms are moved to their symmetry-refined positions; pymatgen keeps the
-   input positions, averaged over the sites it merges. The refined positions
-   shift the features slightly: the oxidation states are the same for the
-   legacy MOFs (50 of 50 checked), but differ for about 1% of MC3D
-   structures (3 of 300 checked; the agreement table above predates this
-   change). For nearly symmetric structures the two tolerances can also
-   choose different cells (3 in 1000). The app's cell is not Niggli-reduced
-   as pymatgen's is, which only changes how it is displayed and downloaded.
+The differences come from three places, none of which can be reproduced
+exactly:
+
+1. **Primitive cell (the largest difference).** Python uses pymatgen's
+   `get_primitive_structure(tolerance=0.25)`, which keeps the input
+   positions (averaged over translation-equivalent sites) in the input's
+   site order. The app uses matsci-parse's `getSymmetry().primitive` (moyo,
+   symprec 0.1), whose positions are symmetry-refined and whose sites are in
+   canonical order. Both change the features: refined positions move every
+   distance slightly, and the featurizer computes only the first metal site
+   of each symmetry orbit, so the site order picks which site represents
+   the orbit. Most of the feature and probability differences in the table
+   come from this. For nearly symmetric structures the two tolerances can
+   also choose different cells (42 in 33,142). The app's cell is not
+   Niggli-reduced as pymatgen's is, which only changes how it is displayed
+   and downloaded. Site labels (`Fe a`, `Fe b`, ...) follow the canonical
+   order, so they can differ from labels of the legacy service.
+
+   Reproducing pymatgen's unrefined cell (averaging the input positions
+   with moyo's `prim_std_linear` / `mapping_std_prim`, about 45 lines) and
+   featurizing in pymatgen's order brings oxidation states to 99.86% (43
+   sites), probabilities to 99.28% and features to 98.68%; it was not kept
+   to rely on matsci-parse alone. Adding an unrefined option to matsci-parse's
+   `getSymmetry` would allow it.
 
 2. **`body-centered cubic CN_8`.** This CrystalNN order parameter sums over
    pairs of neighbours in their listed order (`j < k`), so it depends on the
@@ -56,7 +71,7 @@ reproduced exactly:
    get different numbers of them. Python counts them as neighbours, which
    changes the maximum/minimum local-difference features and CrystalNN's
    solid-angle/area weights; the app's Voronoi cells have no zero-area faces.
-   About 5 in 1000 structures, including the only changed prediction seen
+   About 5 in 1000 structures, including a changed prediction
    (`mc3d-66151`: one Pt site II in the app, III in Python).
 
 MC3D structures are inorganic, outside the MOF training set, so these

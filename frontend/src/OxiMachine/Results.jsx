@@ -10,7 +10,7 @@ import FeatureValues from "./FeatureValues";
 import PredictionsTable from "./PredictionsTable";
 import { PREPRINT_URL } from "../utils";
 
-export default function Results({ inputStructure, result, fileName }) {
+export default function Results({ result, fileName }) {
   const [open, setOpen] = useState(null);
   const toggle = (key) => setOpen(open === key ? null : key);
 

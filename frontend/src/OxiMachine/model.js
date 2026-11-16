@@ -142,6 +142,20 @@ class Neighbours {
     this.position = new Int32Array(n);
     order.forEach((point, p) => (this.position[point] = p));
     this.chunks = new Map(); // chunk -> Promise of its rows (Float64Array)
+    this.columns = new WeakMap(); // points -> per feature, the codes of those points
+  }
+
+  /** Per feature, the bin codes of `points` (all if null), contiguous. */
+  codeColumns(points) {
+    const { m, n, codes } = this;
+    if (!points) return Array.from({ length: m }, (_, j) => codes.subarray(j * n, (j + 1) * n));
+    if (!this.columns.has(points)) {
+      this.columns.set(points, Array.from({ length: m }, (_, j) => {
+        const column = codes.subarray(j * n, (j + 1) * n);
+        return Uint8Array.from(points, (point) => column[point]);
+      }));
+    }
+    return this.columns.get(points);
   }
 
   chunk(c) {
@@ -159,11 +173,12 @@ class Neighbours {
    * d: manhattan distance, or the squared euclidean distance.
    */
   async nearest(x, k, metric, points = null) {
-    const { m, n, bins, codes, lo, hi, chunkRows } = this;
+    const { m, n, bins, lo, hi, chunkRows } = this;
     const count = points ? points.length : n;
     const point = (i) => (points ? points[i] : i);
     const l1 = metric === "manhattan";
 
+    const columns = this.codeColumns(points);
     const bound = new Float64Array(count);
     const gap = new Float64Array(bins);
     for (let j = 0; j < m; j++) {
@@ -171,38 +186,48 @@ class Neighbours {
         const g = Math.max(lo[j * bins + b] - x[j], 0) + Math.max(x[j] - hi[j * bins + b], 0);
         gap[b] = l1 ? g : g * g;
       }
-      const column = codes.subarray(j * n, (j + 1) * n);
-      for (let i = 0; i < count; i++) bound[i] += gap[column[point(i)]];
+      const column = columns[j];
+      for (let i = 0; i < count; i++) bound[i] += gap[column[i]];
     }
-    const byBound = Int32Array.from({ length: count }, (_, i) => i).sort((a, b) => bound[a] - bound[b]);
 
     const best = []; // { i, d }, by (d, i)
     const kth = () => (best.length < k ? Infinity : best[k - 1].d);
-    for (let p = 0; p < count && bound[byBound[p]] <= kth(); ) {
-      // the next points that can still be among the k nearest, at most 64
-      let q = p;
-      while (q < count && q - p < 64 && bound[byBound[q]] <= kth()) q++;
-      const batch = byBound.subarray(p, q);
-      const positions = Array.from(batch, (i) => this.position[point(i)]);
-      const loaded = new Map(
-        await Promise.all([...new Set(positions.map((pos) => Math.floor(pos / chunkRows)))].map(async (c) => [c, await this.chunk(c)])),
-      );
-      batch.forEach((i, b) => {
-        const pos = positions[b];
-        const offset = (pos % chunkRows) * m;
-        const row = loaded.get(Math.floor(pos / chunkRows));
-        let d = 0;
-        if (l1) for (let j = 0; j < m; j++) d += Math.abs(row[offset + j] - x[j]);
-        else for (let j = 0; j < m; j++) d += (row[offset + j] - x[j]) ** 2;
-        if (best.length < k || d < best[k - 1].d || (d === best[k - 1].d && i < best[k - 1].i)) {
-          const at = best.findIndex((e) => e.d > d || (e.d === d && e.i > i));
-          best.splice(at < 0 ? best.length : at, 0, { i, d });
-          if (best.length > k) best.pop();
-        }
-      });
-      p = q;
+    // Sorting all bounds costs more than the search: sort only those up to a
+    // limit (first the 64 smallest), and raise it while the k-th distance is above it.
+    let visited = -Infinity; // all bounds up to this were candidates
+    let limit = bound.slice().sort()[Math.min(63, count - 1)];
+    for (;;) {
+      const byBound = [];
+      for (let i = 0; i < count; i++) if (bound[i] > visited && bound[i] <= limit) byBound.push(i);
+      byBound.sort((a, b) => bound[a] - bound[b] || a - b);
+      for (let p = 0; p < byBound.length && bound[byBound[p]] <= kth(); ) {
+        // the next points that can still be among the k nearest, at most 64
+        let q = p;
+        while (q < byBound.length && q - p < 64 && bound[byBound[q]] <= kth()) q++;
+        const batch = byBound.slice(p, q);
+        const positions = batch.map((i) => this.position[point(i)]);
+        const loaded = new Map(
+          await Promise.all([...new Set(positions.map((pos) => Math.floor(pos / chunkRows)))].map(async (c) => [c, await this.chunk(c)])),
+        );
+        batch.forEach((i, b) => {
+          const pos = positions[b];
+          const offset = (pos % chunkRows) * m;
+          const row = loaded.get(Math.floor(pos / chunkRows));
+          let d = 0;
+          if (l1) for (let j = 0; j < m; j++) d += Math.abs(row[offset + j] - x[j]);
+          else for (let j = 0; j < m; j++) d += (row[offset + j] - x[j]) ** 2;
+          if (best.length < k || d < best[k - 1].d || (d === best[k - 1].d && i < best[k - 1].i)) {
+            const at = best.findIndex((e) => e.d > d || (e.d === d && e.i > i));
+            best.splice(at < 0 ? best.length : at, 0, { i, d });
+            if (best.length > k) best.pop();
+          }
+        });
+        p = q;
+      }
+      // every point with a bound up to the k-th distance has been a candidate
+      if (kth() <= limit) return best;
+      [visited, limit] = [limit, kth()];
     }
-    return best;
   }
 }
 

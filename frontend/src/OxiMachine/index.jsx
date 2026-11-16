@@ -109,7 +109,6 @@ export default function OxiMachine({ structure, fileName, className = "" }) {
         <McResults busy={computing} resultKey={result}>
           {result && (
             <Results
-              inputStructure={result.structure}
               result={result.data}
               fileName={result.fileName}
             />
